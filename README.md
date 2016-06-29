@@ -1,4 +1,4 @@
-# BSD-QBio$^2$
+# BSD-QBio2
 Second BSD QBio Boot Camp
 
 ## Instructions for instructors
