@@ -16,6 +16,10 @@ If possible, start by stating the **Goal** of the tutorial, the intended **Audie
 
 - **Installation:** the following packages need to be installed: `ggplot2`, `dplyr`, `tidyr`, `lubridate`, `ggthemes`
 
+If possible, **include a few small exercises to break the flow**. These are useful for people to catch up with the class, and to make sure they understood what they've just heard.
+
+Conclude with a series of **more substantial exercises** that the students will solve in small groups. For the tutorials, I would suggest using at least 45 mins for group exercises.
+
 ## Help
 If you need any help with wiring the code, feel free to contact me (sallesina@uchicago.edu)
 
