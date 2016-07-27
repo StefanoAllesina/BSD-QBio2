@@ -2,10 +2,11 @@
 author: "Stefano Allesina"
 title: "Basic Computing 1 -- Introduction to R"
 output: 
-  pdf_document
+  pdf_document: 
+    highlight: tango
 ---
 
-# Introduction to R
+# Basic Computing 1 
 
 - **Goal:** Introduce the stastical software `R`, and show how it can be used to analyze biological data in an automated, replicable way. Showcase the `RStudio` development environment, illustrate the notion of assignement, present the main data structures available in `R`. Show how to read and write data, how to execute simple programs, and how to modify the stream of execution of a program through conditional branching and looping.
 
@@ -248,8 +249,8 @@ rep(c(1,2,3), 3)
 
 > **Exercise:** 
 > 
-> - Create a vector containing all the even numbers between 2 and 100 (inclusive) and store it in variable `z.
-> - Extract all the elements of $z$ that are divisible by 12. How many elements match this criterion?
+> - Create a vector containing all the even numbers between 2 and 100 (inclusive) and store it in variable `z`.
+> - Extract all the elements of `z` that are divisible by 12. How many elements match this criterion?
 > - What is the sum of all the elements of `z`?
 > - Is it equal to $51 \cdot 50$?
 > - What is the product of elements 5, 10 and 15 of `z`?
@@ -433,7 +434,7 @@ The data contains the number of homozygotes (`nA1A1`, `nA2A2`) and heterozygotes
 
 # Conditional branching
 
-Now we turn to writing actual programs, in the **Code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open and `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
+Now we turn to writing actual programs, in the **Source code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open and `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
 
 Now type the following script:
 ```{r, eval = FALSE}
@@ -463,7 +464,7 @@ x <- 4
 print(x)
 if (x %% 2 == 0){
   my_message <- paste(x, "is even")
-} else{
+} else {
   my_message <- paste(x, "is odd")
 }
 print(my_message)
@@ -471,7 +472,181 @@ print(my_message)
 
 We have created a conditional branching point, so that the value of `my_message` changes depending on whether `x` is even (and thus the remainder of the integer division by 2 is 0), or odd. Change the line `x <- 4` to `x <- 131` and run it again.
 
+> **Exercise:** What does this do?
+> ```{r}
+x <- 36
+if (x > 20){
+  x <- sqrt(x)
+} else {
+  x <- x ^ 2
+}
+if (x > 7) {
+  print(x)
+} else if (x %% 2 == 1){
+  print(x + 1)
+}
+```
 
 # Looping
 
-# Exercises
+Another way to change the flow of the program is to write a loop.  A loop is simply a series of commands that are repeated a number of times. For example, you want to run the same analysis on different data sets that you collected; you want to plot the results contained in a set of files; you want to test your simulation over a number of parameter sets; etc.
+
+`R` provides you with two ways to loop over blocks of commands: the `for` loop, and the `while` loop. Let's start with the `for` loop, which is used to iterate over a vector (or a list): for each value of the vector, a series of commands will be run, as shown by the following example, which you can type in a new script called `forloop.R`.
+
+```{r, eval=FALSE}
+myvec <- 1:10 # vector with numbers from 1 to 10
+
+for (i in myvec) {
+  a <- i ^ 2
+  print(a)
+}
+```
+
+In the code above, the variable `i` takes the value of each element of `myvec` in sequence. Inside the block defined by the `for` loop, you can use the variable `i` to perform operations.
+
+The anatomy of the `for` statement:
+
+```{r, eval=FALSE}
+for (variable in list_or_vector) {
+  execute these commands
+} # automatically moves to the next value
+```
+
+For loops are used when you know that you want to perform the analysis using a given set of values (e.g., run over all files of a directory, all samples in your data, all sequences of a fasta file, etc.).
+
+The `while` loop is used when the commands need to be repeated while a certain condition is true, as shown by the following example, which you can type in a script called `whileloop.R`:
+
+```{r, eval=FALSE}
+i <- 1
+
+while (i <= 10) {
+  a <- i ^ 2
+  print(a)
+  i <- i + 1 
+}
+```
+
+The script performs exactly the same operations we wrote for the `for` loop above. Note that you need to update the value of `i`, (using `i <- i + 1`), otherwise the loop will run forever (infinite loop---to terminate click on the stop button in the top-right corner of the console). The anatomy of the `while` statement:
+
+```{r, eval=FALSE}
+while (condition is met) {
+  execute these commands
+} # beware of infinite loops: remember to update the condition!
+```
+
+You can break a loop using the command `break`. For example:
+
+```{r, eval=FALSE}
+i <- 1
+
+while (i <= 10) {
+  if (i > 5) {
+    break
+  }
+  a <- i ^ 2
+  print(a)
+  i <- i + 1
+}
+```
+
+> **Exercise**: What does this do? Try to guess what each loop does, and then create
+and run a script to confirm your intuition.
+> ```{r, eval=FALSE}
+z <- seq(1, 1000, by = 3)
+for (k in z) {
+  if (k %% 4 == 0) {
+     print(k)
+  }
+}
+```
+> ```{r, eval=FALSE}
+z <- readline(prompt = "Enter a number: ")
+z <- as.numeric(z)
+isthisspecial <- TRUE
+i <- 2
+while (i < z) {
+  if (z %% i == 0) {
+     isthisspecial <- FALSE
+     break
+  }
+  i <- i + 1
+}
+if (isthisspecial == TRUE) {
+  print(z)
+}
+```
+
+# Useful Functions
+We conclude with a list of useful functions that will help you write your programs:
+
+- `range(x)`: minimum and maximum of a vector `x`
+- `sort(x)`: sort a vector `x`
+- `unique(x)`: remove duplicate entries from vector `x`
+- `which(x == a)`: returns a vector of the indices of `x` having value `a`
+- `list.files("path_to_directory")`: list the files in a directory (current directory if not specified)
+- `table(x)` build a table of frequencies
+
+> **Exercises:** What does this code do? For each snippet of code, first try to guess what will happen. Then, write a script and run it to confirm your intuition.
+> ```{r, eval = FALSE}
+v <- c(1,3,5,5,3,1,2,4,6,4,2)
+v <- sort(unique(v))
+for (i in v){
+  if (i > 2){
+    print(i)
+  }
+  if (i > 4){
+    break
+  }
+}
+```
+> ```{r, eval = FALSE}
+x <- 1:100
+x <- x[which(x %% 7 == 0)]
+```
+> ```{r, eval = FALSE}
+my_files <- sort(list.files("../data/Saavedra2013/"))
+for (f in my_files){
+  file_name <- paste("../data/Saavedra2013/", f, sep = "")
+  M <- read.table(file_name)
+  print(paste("The file", f, "contains a matrix with", nrow(M),
+  "rows and ", ncol(M), "columns. There are", sum(M == 1), 
+  "coefficients that are 1 and", sum(M == 0), "that are 0."))
+}
+```
+> ```{r, eval = FALSE}
+my_amount <- 10
+while (my_amount > 0){
+  my_color <- NA
+  while(is.na(my_color)){
+    tmp <- readline(prompt="Do you want to bet on black or red? ")
+    if (tmp == "black") my_color <- "black"
+    if (tmp == "red") my_color <- "red"
+    if (is.na(my_color)) print("Please enter either red or black")
+  }
+  my_bet <- NA
+  while(is.na(my_bet)){
+    tmp <- readline(prompt="How much do you want to bet? ")
+    tmp <- as.numeric(tmp)
+    if (is.numeric(tmp) == FALSE){
+      print("Please enter a number")
+    } else {
+      if (tmp > my_amount){
+        print("You don't have enough money!")
+      } else {
+        my_bet <- tmp
+        my_amount <- my_amount - tmp
+      }
+    }
+  }
+  lady_luck <- sample(c("red", "black"), 1)
+  if (lady_luck == my_color){
+    my_amount <- my_amount + 2 * my_bet
+    print(paste("You won!! Now you have", my_amount, "gold dobloons"))
+  } else {
+    print(paste("You lost!! Now you have", my_amount, "gold dobloons"))
+  }
+  print("I told you this was not a good idea...")
+}
+```
+
+# Exercises in groups
