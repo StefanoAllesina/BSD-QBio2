@@ -25,6 +25,6 @@ These readings are not mandatory, but they review some of the techniques and mod
 * [Lotka-Volterra Model (Wikipedia)](https://en.wikipedia.org/wiki/Lotka%E2%80%93Volterra_equation)
 * [Compartmental SIR Models (Wikipedia)](https://en.wikipedia.org/wiki/Compartmental_models_in_epidemiology)
 * [Chaos theory (Wikipedia)](https://en.wikipedia.org/wiki/Chaos_theory)
-* [May 1976](../readings/may.pdf): "Simple mathematical models with very complicated dynamics"
-* [Earn et al. 2000](../readings/earn.pdf): "A simple model for complex dynamical transitions in epidemics"
+* [May 1976](https://github.com/StefanoAllesina/BSD-QBio2/raw/master/workshops/cobey/readings/may.pdf): "Simple mathematical models with very complicated dynamics"
+* [Earn et al. 2000](https://github.com/StefanoAllesina/BSD-QBio2/raw/master/workshops/cobey/readings/earn.pdf): "A simple model for complex dynamical transitions in epidemics"
 * [Shrestha et al. 2011](http://journals.plos.org/ploscompbiol/article?id=10.1371%2Fjournal.pcbi.1002135): "Statistical inference for multi-pathogen systems"
