@@ -1,6 +1,6 @@
 ---
 author: "Stefano Allesina"
-title: "Advanced Computing 2 -- Data wrangling and visualization"
+title: "Advanced Computing 1 -- Data wrangling and visualization"
 output: pdf_document
 ---
 
