@@ -12,7 +12,7 @@ output:
 
 - **Audience:** Biologists with little or no background in programming.
 
-- **Installation:** To complete the tutorial, we will need to install `R` and `RStudio`. To install `R`, follow instructions [here](https://cran.rstudio.com/). Then install `Rstudio` following the instructions [here](https://www.rstudio.com/products/rstudio/download2/).
+- **Installation:** To complete the tutorial, we will need to install `R` and `RStudio`. To install `R`, follow instructions at [`cran.rstudio.com`](https://cran.rstudio.com/). Then install `Rstudio` following the instructions at [`goo.gl/a42jYE`](https://www.rstudio.com/products/rstudio/download2/).
 
 # Motivation
 
@@ -34,7 +34,7 @@ Here we introduce `R`, which can help you write simple programs to analyze your 
 
 `R` is a statistical software that is completely programmable. This means that one can write a program (script) containing a series of commands for the analysis of data, and execute them automatically. This approach is especially good as it makes the analysis of data well-documented, and completely replicable. 
 
-`R` is free software: anyone can download the source code, modify it, and improve it. The `R` community of users is vast and very active. In particular, scientists have enthusiastically embraced the program, creating thousands of packages to perform specific types of analysis, and adding many new capabilities. You can find a list of official packages (which have been vetted by `R` core developers) [here](https://cran.r-project.org/web/packages/available_packages_by_name.html); many more are available on GitHub and other websites.
+`R` is free software: anyone can download the source code, modify it, and improve it. The `R` community of users is vast and very active. In particular, scientists have enthusiastically embraced the program, creating thousands of packages to perform specific types of analysis, and adding many new capabilities. You can find a list of official packages (which have been vetted by `R` core developers) at [`goo.gl/S0SDWA`](https://cran.r-project.org/web/packages/available_packages_by_name.html); many more are available on GitHub and other websites.
 
 The main hurdle new users face when approaching `R` is that it is based on a command line interface: when you launch `R`, you simply open a console with the character `>` signaling that `R` is ready to accept an input. When you write a command and press `Enter`, the command is interpreted by `R`, and the result is printed immediately after the command. For example, 
 
@@ -53,7 +53,7 @@ Typically, an `RStudio` window contains four panels:
 - **Console** This is a panel containing an instance of `R`. For this tutorial, we will work mainly in this panel.
 - **Source code** In this panel, you can write a program, save it to a file pressing `Ctrl + S` and then execute it by pressing `Ctrl + Shift + S`.
 - **Environment** This panel lists all the variables you created (more on this later); another tab shows you the history of the commands you typed.
-- **Plots** This panel shows you all the plots you drew. Other tabs allow you to access the list of packages you have loaded, and the help page for commands and packages.
+- **Plots** This panel shows you all the plots you drew. Other tabs allow you to access the list of packages you have loaded, and the help page for commands (just type `help(name_of_command)` in the Console) and packages.
 
 # How to write an `R` program
 
@@ -182,34 +182,49 @@ Besides these simple types, `R` provides more structured data types, meant to co
 
 ## Vectors
 
-The most basic data structure in `R` is the vector, which is an ordered
-collection of values of the same type. Vectors can be created by
-concatenating different values with the function `c()` (concatenate):
+The most basic data structure in `R` is the vector, which is an ordered collection of values of the same type. Vectors can be created by concatenating different values with the function `c()` (concatenate):
 
 ```{r}
 x <- c(2, 3, 5, 27, 31, 13, 17, 19) 
 x
 ```
 
-You can access the elements of a vector by their index: the first
-element is indexed at 1, the second at 2, etc.
+You can access the elements of a vector by their index: the first element is indexed at 1, the second at 2, etc.
 ```{r}
 x[3]
 x[8]
 x[9] # what if the element does not exist?
 ```
 
-`NA` stands for Not Available. Other special values are `Nan` (Not a number), `Inf` (infinite), and `NULL` (variable not set). You can test for special values using `is.na(x)`, `is.infinite(x)`, etc.
+`NA` stands for Not Available. Other special values are `NaN` (Not a Number), `Inf` (Infinity), and `NULL` (variable not set). You can test for special values using `is.na(x)`, `is.infinite(x)`, etc.
 
-You can extract several elements at once (i.e., create another
-vector), using the colon (`:`) command, or by concatenating the
-indices:
+Note that in `R` a single number (string, logical) is a vector of length 1 by default. That's why if you type `3` in the console you see `[1] 3` in the output.
+
+You can extract several elements at once (i.e., create another vector), using the colon (`:`) command, or by concatenating the indices:
 
 ```{r}
 x[1:3]
 x[4:7]
 x[c(1,3,5)]
 ```
+
+You can also use a vector of logical variables to extract values from vectors. For example, suppose we have two vectors:
+```{r}
+sex <- c("M", "M", "F", "M", "F") # sex of Drosophila
+weight <- c(0.230, 0.281, 0.228, 0.260, 0.231) # weigth in mg
+```
+
+and that we want to extract only the weights for the males. 
+
+```{r}
+sex == "M"
+```
+
+returns a vector of logical values, which we can use to subset the data:
+```{r}
+weight[sex == "M"]
+```
+
 
 Given that `R` was born for statistics, there are many statistical
 functions you can perform on vectors:
@@ -268,7 +283,7 @@ A
 A %*% A # matrix product
 solve(A) # matrix inverse
 A %*% solve(A) # this should return the identity matrix
-B <- matrix(1, 3, 2)
+B <- matrix(1, 3, 2) # by specifying only one value (1) it will be replicated 
 B
 B %*% t(B) # transpose
 Z <- matrix(1:9, 3, 3) # by default, matrices are filled by column
@@ -314,7 +329,7 @@ You can still determine the dimensions using:
 dim(M)
 ```
 
-and access the elements as done for matrices. One thing you should be paying attention to: `R` drops dimensions that are not needed. So, if you access a ``slice'' of a 3-dimensional array:
+and access the elements as done for matrices. One thing you should be paying attention to: `R` drops dimensions that are not needed. So, if you access a "slice" of a 3-dimensional array:
 
 ```{r}
 M[,,1]
@@ -325,7 +340,7 @@ you obtain a matrix:
 dim(M[,,1])
 ```
 
-To avoid this behavior, add `drop = FALSE` when subsetting:
+This can be problematic when your code for example expects an array and `R` turns your data into a matrix (or you expect a matrix but find a vector). To avoid this behavior, add `drop = FALSE` when subsetting:
 ```{r}
 dim(M[,,1, drop = FALSE])
 ```
@@ -390,8 +405,8 @@ Similarly, you can save your data frames using `write.table` or `write.csv`. Sup
 ```{r, eval = FALSE}
 write.csv(MyDF, "MyFile.csv") 
 write.csv("MyFile.csv", append = TRUE) # Append to the end of the file. 
-read.csv("MyFile.csv", row.names = TRUE) # Include the row names.
-read.csv("MyFile.csv", col.names = FALSE) # Do not include column names.
+write.csv("MyFile.csv", row.names = TRUE) # Include the row names.
+write.csv("MyFile.csv", col.names = FALSE) # Do not include column names.
 ```
 
 Let's look at an example: Read a file containing data on the 6th chromosome for a number of Europeans (Data adapted from [Stanford HGDP SNP Genotyping Data](hagsc.org/hgdp/) by John   Novembre.):
@@ -400,7 +415,7 @@ Let's look at an example: Read a file containing data on the 6th chromosome for 
 ch6 <- read.table("../data/H938_Euro_chr6.geno", header = TRUE)
 ```
 
-where \texttt{header = TRUE} means that we want to take the first line to be a header containing the column names. How big is this table?
+where `header = TRUE` means that we want to take the first line to be a header containing the column names. How big is this table?
 
 ```{r}
 dim(ch6)
@@ -419,11 +434,11 @@ tail(ch6)
 
 The data contains the number of homozygotes (`nA1A1`, `nA2A2`) and heterozygotes (`nA1A2`), for 43,141 single nucleotide polymorphisms (SNPs) obtained by sequencing European individuals:
 
-- `CHR`The chromosome (6 in this case)
+- `CHR` The chromosome (6 in this case)
 - `SNP` The identifier of the Single Nucleotide Polymorphism
 - `A1` One of the alleles
 - `A2` The other allele
-- `nA1A1` The number of individuals with the particular combination   of alleles.
+- `nA1A1` The number of individuals with the particular combination of alleles.
 
 > **Exercise:** 
 > 
@@ -434,7 +449,7 @@ The data contains the number of homozygotes (`nA1A1`, `nA2A2`) and heterozygotes
 
 # Conditional branching
 
-Now we turn to writing actual programs, in the **Source code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open and `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
+Now we turn to writing actual programs in the **Source code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open and `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
 
 Now type the following script:
 ```{r, eval = FALSE}
@@ -604,11 +619,10 @@ x <- 1:100
 x <- x[which(x %% 7 == 0)]
 ```
 > ```{r, eval = FALSE}
-my_files <- sort(list.files("../data/Saavedra2013/"))
+my_files <- sort(list.files("../data/Saavedra2013/", full.names = TRUE))
 for (f in my_files){
-  file_name <- paste("../data/Saavedra2013/", f, sep = "")
-  M <- read.table(file_name)
-  print(paste("The file", f, "contains a matrix with", nrow(M),
+  M <- read.table(f)
+  print(paste("The file", basename(f), "contains a matrix with", nrow(M),
   "rows and ", ncol(M), "columns. There are", sum(M == 1), 
   "coefficients that are 1 and", sum(M == 0), "that are 0."))
 }
@@ -619,6 +633,7 @@ while (my_amount > 0){
   my_color <- NA
   while(is.na(my_color)){
     tmp <- readline(prompt="Do you want to bet on black or red? ")
+    tmp <- tolower(tmp)
     if (tmp == "black") my_color <- "black"
     if (tmp == "red") my_color <- "red"
     if (is.na(my_color)) print("Please enter either red or black")
@@ -645,8 +660,21 @@ while (my_amount > 0){
   } else {
     print(paste("You lost!! Now you have", my_amount, "gold dobloons"))
   }
-  print("I told you this was not a good idea...")
 }
+print("I told you this was not a good idea...")
 ```
 
 # Exercises in groups
+## Nobel nominations
+The file `../data/nobel_nominations.csv` contains the nominations to the Nobel prize from 1901 to 1964. There are three columns (the file has no header): a) the field (e.g. `Phy` for physics), b) the year of the nomination, c) the id and name of the nominee.
+
+- Take your favorite field. Who received most nominations? 
+- Who received nominations in more than one field?
+- Take the field of physics. Which year had the largest number of nominees?
+- What is the average number of nominees for each field? Calculate the average number of nominee for each field across years.
+
+**Hints** 
+
+- You will need to subset the data. To make operations clearer, you can give names to the columns. For example, suppose you stored the data in in a data frame called `nobel`. Then `colnames(nobel) <- c("Field", "Year", "Nominee")` will do the trick.
+- The simplest way to obtain a count from a vector is to use the command `table`. The command `sort(table(my_vector))` produces a table of the occurrences in `my_vector` sorted from few to many counts.
+- You can build a table using more than one vector. For example, store the Nobel nominations in the data frame `nobel`, and name the columns as suggested above. The command `head(table(nobel$Nominee, nobel$Field))` will build a table with the number of nominations in each field (column) for each nominee (rows).
