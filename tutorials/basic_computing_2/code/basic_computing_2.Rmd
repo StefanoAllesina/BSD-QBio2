@@ -9,7 +9,7 @@ output:
 
 # Basic Computing 2
 
-- **Goal:** Show how to install, load and use the many freely available packages. Illustrate how to write user-defined functions and how to organize code. Showcase basic plotting functions. Introduce the package `knitr` for writing beautiful reports.
+- **Goal:** Show how to install, load and use the many freely available `R` packages. Illustrate how to write user-defined functions and how to organize code. Showcase basic plotting functions. Introduce the package `knitr` for writing beautiful reports.
 
 - **Audience:** Biologists with basic knowledge of `R`.
 
@@ -18,7 +18,7 @@ output:
 # Packages
 `R` is the most popular statistical computing software among biologists due to its highly specialized packages, often written from biologists for biologists. You can contribute a package, too! The `RStudio` support [(`goo.gl/harVqF`)](http://goo.gl/harVqF) provides guidance on how to start developing `R` packages  and Hadley Wickham's free online book [(`r-pkgs.had.co.nz`)](http://r-pkgs.had.co.nz) will make you a pro.
 
-You can find highly specialized packages to address your research questions. Here are some suggestions for finding an appropriate package. The Comprehensive R Archive Network (CRAN) offers several ways to find specific packages for your task. You can either browse packages [(`goo.gl/7oVyKC`)](http://goo.gl/7oVyKC) and their short description or select a scientific field of interest [(`goo.gl/0WdIcu`)](http://goo.gl/0WdIcu) to browse through a compilation of packages related to this discipline.
+You can find highly specialized packages to address your research questions. Here are some suggestions for finding an appropriate package. The Comprehensive R Archive Network (CRAN) offers several ways to find specific packages for your task. You can either browse packages [(`goo.gl/7oVyKC`)](http://goo.gl/7oVyKC) and their short description or select a scientific field of interest [(`goo.gl/0WdIcu`)](http://goo.gl/0WdIcu) to browse through a compilation of packages related to each discipline.
 
 From within your `R` terminal or `RStudio` you can also call the function `RSiteSearch("KEYWORD")`, which submits a search query to the website [`search.r-project.org`](http://search.r-project.org). The website [`rseek.org`](http://rseek.org) casts an even wider net, as it not only includes package names and their documentation but also blogs and mailing lists related to `R`. If your research interests relate to high-throughput genomic data, you should have a look the packages provided by  Bioconductor [(`goo.gl/7dwQlq`)](http://goo.gl/7dwQlq).
 
@@ -95,7 +95,7 @@ Let's see the first few rows:
 head(papers, 3)
 ```
 
-Now, we want to test whether papers with longer titles do accrue fewer (or more) citations than those with longer titles. The first step is therefore to add another column to the data, containing the length of the title for each paper:
+Now, we want to test whether papers with longer titles do accrue fewer (or more) citations than those with shorter titles. The first step is therefore to add another column to the data, containing the length of the title for each paper:
 
 ```{r}
 papers$TitleLength <- nchar(papers$Title)
@@ -404,7 +404,7 @@ for (my_file in list.files("../data/citations", full.names = TRUE)){
 }
 ```
 
-Now the function to perform the linear model:
+Now the function to fit the linear model:
 ```{r}
 linear_model_year_length <- function(papers){
   my_model <- summary(lm(LogCits ~ as.factor(Year) + TitleLength, data = papers))
@@ -553,9 +553,11 @@ will become
 print("hello world!")  
 ```
 
-If you don't want to run the `R` code, but just display it, use `{r, eval = FALSE}`; if you want to show the output but not the code, use `{r, echo=FALSE}`.
+If you don't want to run the `R` code, but just display it, use `{r, eval = FALSE}`; if you want to show the output but not the code, use `{r, echo = FALSE}`.
 
 You can include plots, tables, and even render equations using LaTeX. In summary, when exploring your data or writing the methods of your paper, give `R Markdown` a try!
+
+You can find inspiration in the notes for the Boot Camp: both the notes for Basic and Advanced Computing are written in `R MarkDown`.
 
 # Exercises in groups
 
