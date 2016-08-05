@@ -8,7 +8,7 @@ output:
 
 # Basic Computing 1 
 
-- **Goal:** Introduce the stastical software `R`, and show how it can be used to analyze biological data in an automated, replicable way. Showcase the `RStudio` development environment, illustrate the notion of assignement, present the main data structures available in `R`. Show how to read and write data, how to execute simple programs, and how to modify the stream of execution of a program through conditional branching and looping.
+- **Goal:** Introduce the stastical software `R`, and show how it can be used to analyze biological data in an automated, replicable way. Showcase the `RStudio` development environment, illustrate the notion of assignment, present the main data structures available in `R`. Show how to read and write data, how to execute simple programs, and how to modify the stream of execution of a program through conditional branching and looping.
 
 - **Audience:** Biologists with little or no background in programming.
 
@@ -22,7 +22,7 @@ This latter approach is to be preferred, because it allows for the automation of
 
 A few motivating examples:
 
-- You have written code to analyze the data. You receive from your collaborators a new batch of data. With simple modifications of your code, you can update your results, tables and figures automatically.
+- You have written code to analyze your data. You receive from your collaborators a new batch of data. With simple modifications of your code, you can update your results, tables and figures automatically.
 
 - A new student joins the laboratory. The new student can read the code and understand the analysis without the need of a lab mate showing the procedure step-by-step.
 
@@ -34,7 +34,7 @@ Here we introduce `R`, which can help you write simple programs to analyze your 
 
 `R` is a statistical software that is completely programmable. This means that one can write a program (script) containing a series of commands for the analysis of data, and execute them automatically. This approach is especially good as it makes the analysis of data well-documented, and completely replicable. 
 
-`R` is free software: anyone can download the source code, modify it, and improve it. The `R` community of users is vast and very active. In particular, scientists have enthusiastically embraced the program, creating thousands of packages to perform specific types of analysis, and adding many new capabilities. You can find a list of official packages (which have been vetted by `R` core developers) at [`goo.gl/S0SDWA`](https://cran.r-project.org/web/packages/available_packages_by_name.html); many more are available on GitHub and other websites.
+`R` is free software: anyone can download its source code, modify it, and improve it. The `R` community of users is vast and very active. In particular, scientists have enthusiastically embraced the program, creating thousands of packages to perform specific types of analysis, and adding many new capabilities. You can find a list of official packages (which have been vetted by `R` core developers) at [`goo.gl/S0SDWA`](https://cran.r-project.org/web/packages/available_packages_by_name.html); many more are available on GitHub and other websites.
 
 The main hurdle new users face when approaching `R` is that it is based on a command line interface: when you launch `R`, you simply open a console with the character `>` signaling that `R` is ready to accept an input. When you write a command and press `Enter`, the command is interpreted by `R`, and the result is printed immediately after the command. For example, 
 
@@ -61,9 +61,9 @@ An `R` program is simply a list of commands, which are executed one after the ot
 
 Note that if you were to copy and paste (or type) the code into the **Console** you would obtain exactly the same result. Writing a program is however advatageous because it can be automated and shared with other researchers. Moreover, after a while you will have a large code base, so that you will recycle much of your code in several programs.
 
-# The most basic operation: assignement
+# The most basic operation: assignment
 
-The most basic operation in any programming language is the assignement. In `R`, assignement is marked by the operator `<-`. When you type a command in `R`, it is executed, and the output is printed in the **Console**. For example:
+The most basic operation in any programming language is the assignment. In `R`, assignment is marked by the operator `<-`. When you type a command in `R`, it is executed, and the output is printed in the **Console**. For example:
 
 ```{r, echo=TRUE, message=FALSE, eval=TRUE}
 sqrt(9)
@@ -76,7 +76,7 @@ x <- sqrt(9)
 x
 ```
 
-What has happened? We wrote a command containing an assignement operator (`<-`). `R` has evaluated the right-hand-side of the command (`sqrt(9)`), and has stored the result (`3`) in a newly created variable called `x`. Now we can use `x` in our commands: every time the command needs to be evaluated, the program will look up which value is associated with the variable `x`, and substitute it. For example:
+What has happened? We wrote a command containing an assignment operator (`<-`). `R` has evaluated the right-hand-side of the command (`sqrt(9)`), and has stored the result (`3`) in a newly created variable called `x`. Now we can use `x` in our commands: every time the command needs to be evaluated, the program will look up which value is associated with the variable `x`, and substitute it. For example:
 
 ```{r, echo=TRUE, message=FALSE, eval=TRUE}
 x * 2 
@@ -92,7 +92,7 @@ v <- TRUE
 class(v)
 ```
 
-- `numeric`, storing real numbers (actually, their approximations, as computers have limited memory and thus cannot store numbers like $\pi$)
+- `numeric`, storing real numbers (actually, their approximations, as computers have limited memory and thus cannot store numbers like $\pi$, or even $0.2$)
 ```{r}
 v <- 3.77
 class(v)
@@ -178,7 +178,7 @@ Similarly, you can concatenate several comparison and logical variables using `&
 
 # Data structures
 
-Besides these simple types, `R` provides more structured data types, meant to collect and organize multiple values.
+Besides these simple types, `R` provides structured data types, meant to collect and organize multiple values.
 
 ## Vectors
 
@@ -196,7 +196,7 @@ x[8]
 x[9] # what if the element does not exist?
 ```
 
-`NA` stands for Not Available. Other special values are `NaN` (Not a Number), `Inf` (Infinity), and `NULL` (variable not set). You can test for special values using `is.na(x)`, `is.infinite(x)`, etc.
+`NA` stands for Not Available. Other special values are `NaN` (Not a Number, e.g., `0/0`), `Inf` (Infinity, e.g., `1/0`), and `NULL` (variable not set). You can test for special values using `is.na(x)`, `is.infinite(x)`, etc.
 
 Note that in `R` a single number (string, logical) is a vector of length 1 by default. That's why if you type `3` in the console you see `[1] 3` in the output.
 
@@ -283,7 +283,7 @@ A
 A %*% A # matrix product
 solve(A) # matrix inverse
 A %*% solve(A) # this should return the identity matrix
-B <- matrix(1, 3, 2) # by specifying only one value (1) it will be replicated 
+B <- matrix(1, 3, 2) # you can fill the whole matrix with a single number (1)
 B
 B %*% t(B) # transpose
 Z <- matrix(1:9, 3, 3) # by default, matrices are filled by column
