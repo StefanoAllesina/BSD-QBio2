@@ -32,7 +32,7 @@ output:
 ### Wednesday, September 7 
 
 ------------------    ------------------------------------------------
-**8:30-10:00**        Visit Marine Resource Center (MRC)              
+**8:30-10:00**        Visit Marine Resources Center (MRC)             
 **10:00-10:30**       Coffee break (LB302)                            
 **10:30-12:00**       Trip on the Gemma (MRC dock – be 15 min early)  
 **12:00-12:45**       Lunch (SWC)                                     
@@ -51,9 +51,9 @@ output:
 **10:00-10:30**       Coffee break (LB302)                            
 **10:30-12:00**       Imaging (LBG70)                                 
 **12:00-1:00**        Lunch (SWC)                                     
-**1:00-2:30**         Math. foundations I (Ch1)                       
+**1:00-2:30**         Math. Foundations I (Ch1)                       
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-4:30**         Math. foundations I (Ch1)                       
+**2:45-4:30**         Math. Foundations I (Ch1)                       
 **5:00-6:30**         Dinner (SWC)                                    
 **7:15-8:00**         MBL Talk – Dr Fabulous (Meigs)                  
 ------------------    ------------------------------------------------
@@ -86,11 +86,11 @@ output:
 ------------------    ------------------------------------------------
 **8:30-10:00**        Worshop Vander Griend (LBG70)                   
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12**          Worshop Vander Griend (LBG70)                   
+**10:30-12:00**       Worshop Vander Griend (LBG70)                   
 **12:00-1:00**        Lunch (SWC)                                     
 **1:00-2:30**         Workshop Cobey (LB263)                          
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-2:30**         Workshop Cobey (LB263)                          
+**2:45-4:30**         Workshop Cobey (LB263)                          
 **5:00-6:30**         Dinner (SWC)                                    
 **7:15-8:00**         Professional Development “Open House” (Loeb)    
 ------------------    ------------------------------------------------
@@ -100,12 +100,11 @@ output:
 ------------------    ------------------------------------------------
 **8:30-10:00**        Worskshop Osborne (Ch1)                         
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12**          Worskshop Osborne (Ch1)                         
+**10:30-12:00**       Worskshop Osborne (Ch1)                         
 **12:00-1:00**        Lunch (SWC)                                     
 **1:00-2:30**         Worskshop Novembre (LB374)                      
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-2:30**         Worskshop Novembre (LB374)                      
-**2:45-2:30**         Workshop Munro/Rust (Ch1)                       
+**2:45-4:30**         Worskshop Novembre (LB374)                      
 **5:00-6:30**         Dinner (SWC)                                    
 **7:15-8:00**         MBL Talk – Dr Extraordinary (Meigs)             
 ------------------    ------------------------------------------------
@@ -115,10 +114,11 @@ output:
 ------------------    ------------------------------------------------
 **8:30-10:00**        Workshop Munro/Rust (Ch1)                       
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12**          Workshop Munro/Rust (Ch1)                       
+**10:30-12:00**       Workshop Munro/Rust (Ch1)                       
 **12:00-1:00**        Lunch (SWC)                                     
 **1:00-2:30**         Workshop Munro/Rust (Ch1)                       
 **2:30-2:45**         Coffee break (LB302)                            
+**2:45-4:30**         Workshop Munro/Rust (Ch1)                       
 **5:00-6:30**         Dinner (SWC)                                    
 **5:00-6:00**         Wrapping up (Meigs)                             
 **6:00-8:00**         BBQ (Terrace)                                   
