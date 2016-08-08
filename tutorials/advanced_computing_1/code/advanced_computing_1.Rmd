@@ -1,7 +1,11 @@
 ---
 author: "Stefano Allesina"
 title: "Advanced Computing 1 -- Data wrangling and visualization"
-output: pdf_document
+output:
+  pdf_document:
+    highlight: tango
+  html_document: default
+
 ---
 
 # Data Wrangling and Visualization
@@ -16,7 +20,7 @@ output: pdf_document
 
 As biologists living in the XXI century, we are often faced with tons of data, possibly replicated over several organisms, treatments, or locations. We would like to streamline and automate our analysis as much as possible, writing scripts that are easy to read, fast to run, and easy to debug. Base `R` can get the job done, but often the code contains complicated operations (think of the cases in which you used `lapply` only because of its speed), and a lot of `$` signs and brackets.
 
-We're going to learn about the packaged `dplyr` and `tidyr`, which can be used to manipulate large data frames in a simple and straightforward way. These tools are also much faster than the corresponding base `R` commands, are very compact, and can be concatenated into "pipelines". 
+We're going to learn about the packages `dplyr` and `tidyr`, which can be used to manipulate large data frames in a simple and straightforward way. These tools are also much faster than the corresponding base `R` commands, are very compact, and can be concatenated into "pipelines". 
 
 To start, we need to import the libraries:
 ```{r, echo=TRUE, message=FALSE, eval=FALSE}
@@ -44,7 +48,7 @@ divvy
 
 The nice feature of `tbl` objects is that they will print only what fits on the screen, and also give you useful information on the size of the data, as well as the type of data  in each column. Other than that, a `tbl` object behaves very much like a `data.frame`. In some rare cases, you want to transform the `tbl` back into a `data.frame`. For this, use the function `as.data.frame(tbl_object)`.
 
-We can take a look at the data using several function:
+We can take a look at the data using one of several functions:
 
 * `head(divvy)` shows the first few (10 by default) rows
 * `tail(divvy)` shows the last few (10 by default) rows
@@ -59,7 +63,7 @@ There are many ways to subset the data, either by row (subsetting the *observati
 filter(divvy, tripduration < 180)
 ```
 
-You can see that "only" 11,099 trips lasted less than three minutes. We have used the command `filter(tbl, conditions)` to select certain observations. We can combine several conditions, by listing them side by side, and possibly using logical operators.
+You can see that "only" 11,099 trips lasted less than three minutes. We have used the command `filter(tbl, conditions)` to select certain observations. We can combine several conditions, by listing them side by side, possibly using logical operators.
 
 > **Exercise:** what does this do?
 >```{r, eval=FALSE}
@@ -82,7 +86,7 @@ Showing that there are 300 stations, once we removed the duplicates.
 
 Other ways to subset observations:
 
-- `sample_n(tbl, howmany, replace = TRUE)` sample `n` rows at random with replacement
+- `sample_n(tbl, howmany, replace = TRUE)` sample `howmany` rows at random with replacement
 
 - `sample_frac(tbl, proportion, replace = FALSE)` sample a certain proportion (e.g. `0.2` for 20%) of rows at random without replacement
 
@@ -201,7 +205,7 @@ Exactly like in the grammar of a natural language, we can easily change the mean
 
 ## Basic `ggplot2`
 
-`ggplot2` ships with a simplified graphing function, called `qplot`. In this introduction we are not going to use it, and we concentrate instead on the function `ggplot`, which gives you complete control over your plotting. First, we need to load the package. While we are at it, let's also load one of the extensions of the package:
+`ggplot2` ships with a simplified graphing function, called `qplot`. In this introduction we are not going to use it, and we concentrate instead on the function `ggplot`, which gives you complete control over your plotting. First, we need to load the package. While we are at it, let's also load a package extending its theming system:
 
 ```{r}
 library(ggplot2)
@@ -257,7 +261,7 @@ ggplot(data = divvy_stations) +
 ```
 
 ## Scatterplots
-Using `ggplot2`, one can produce very many types of graphs. The package works very well for 2D graphs (or 3D rendered in two dimensions), while it lack capabilities to draw 3D graphs proper, or networks.
+Using `ggplot2`, one can produce very many types of graphs. The package works very well for 2D graphs (or 3D rendered in two dimensions), while it lack capabilities to draw proper 3D graphs, or networks.
 
 The main feature of `ggplot2` is that you can tinker with your graph fairly easily, and with a common grammar. You don't have to settle on a certain presentation of the data until you're ready, and it is very easy to switch from one type of graph to another.
 
@@ -402,7 +406,7 @@ pl + theme_wsj() # like "The Wall Street Journal"
 
 ## Faceting
 
-In many cases, we would like to produce a multi-panel graph, in which each panel shows the data for a certain combination of parameters. In `ggplot` this is easy to do using `faceting`: the command `facet_grid` is used when you want to produce a grid of panels, in which all the panels in the same row (column) have a parameter in common; `facet_wrap` is used when the different panels do not have features in common.
+In many cases, we would like to produce a multi-panel graph, in which each panel shows the data for a certain combination of parameters. In `ggplot` this is called *faceting*: the command `facet_grid` is used when you want to produce a grid of panels, in which all the panels in the same row (column) have a parameter in common; `facet_wrap` is used when the different panels do not have features in common.
 
 For example:
 ```{r, eval = FALSE}
