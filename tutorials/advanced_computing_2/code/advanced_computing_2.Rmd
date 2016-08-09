@@ -14,7 +14,7 @@ output:
 
 - **Audience:** experienced `R` users, familiar with `dplyr` and `ggplot2`.
 
-- **Installation:** 
+- **Installation:** Windows users need to install a UNIX shell emulator (e.g., `Git Bash`); for regular expressions, we are going to use the `R` package `stringr`.
 
 
 # The UNIX Shell
@@ -106,7 +106,7 @@ important directories branch:
 - `/etc` contains configuration files.
 - `/dev` contains the files connecting to devices such as  the keyboard, mouse and screen.
 - `/home` contains the home directory of each user (e.g., `/home/yourname`; in OS X, your home directory is stored in
-  `/Users/yourname`.
+  `/Users/yourname`).
 - `/tmp` contains temporary files.
 
 You will typically work in your home directory. From there, you can
@@ -128,7 +128,7 @@ Ubuntu and OS X.
 
 In Ubuntu, you can open a shell by pressing `Ctrl + Alt + t` or
 by opening the dash (hold the `Meta` key) and typing
-`Termina`}. In OS X, you want to open the application
+`Terminal`. In OS X, you want to open the application
 `Terminal.app`, which is located in the folder *Utilities*
 within *Applications*. Alternatively, you can type `Terminal` in
 *Spotlight*. In either system, the shell will automatically
@@ -186,7 +186,7 @@ its options and arguments are separated by a space.
 `UNIX` ships with hundreds of commands. As such, it is impossible to
 remember them all, let alone all their possible options. Fortunately,
 each command is described in detail in its manual page, which can be
-accessed directly from the shell by typing `man [COMMAND OF YOUR CHOICE]`. Use arrows to scroll up and down and hit `q`
+accessed directly from the shell by typing `man [COMMAND OF YOUR CHOICE]` (not available in `Git Bash`). Use arrows to scroll up and down and hit `q`
 to close the manual page. Checking the exact behavior of a command is
 especially important, given that the shell will execute any command
 you type without asking whether you know what you're doing (so that it
@@ -208,7 +208,7 @@ commands:
   working directory.
 - `ls` list the files and sub-directories in the current directory. `ls -a` list all (including hidden) files. `ls -l` return the long list with detailed information. `ls -lh` provide file sizes with units (B, M, K, etc. ).}
 - `cd [NAMEOFDIR]` change directory.
-  `cd ..` move one directory up; `cd /` move to the root directory; `cd ~` move to your home directory; `cd -` go back to the directory you visited previously (like "Back"" in a browser).`
+  `cd ..` move one directory up; `cd /` move to the root directory; `cd ~` move to your home directory; `cd -` go back to the directory you visited previously (like "Back"" in a browser).
 
 ## Handling directories and files
 Create and delete files or directories using the following commands:
@@ -246,45 +246,45 @@ a few popular ones:
 > **Exercise**
 > To familiarize yourself with these commands, try the following:
 > 
-> - Go to the data directory for this tutorial.
+> - Go to the `data` directory for this tutorial.
 > - How many lines are in file `Marra2014_data.fasta`?
 > - Go back to the `code` directory.
 > - Create the empty file `toremove.txt`.
 > - List the content of the directory.
 > - Remove the file `toremove.txt`.
 
-## Permissions
+<!-- ## Permissions -->
 
-In `UNIX`, each file and directory has specific security attributes
-specifying who can read (`r`), write (`w`), execute
-(`x`) or do nothing (`-`) with the file or
-directory. These permissions are specified for three entities that may
-wish to manipulate the file (owner, specific group, and others). The
-group level is useful to assign permissions to a specified group of
-users (e.g., administrators, developers) but not everyone else. 
+<!-- In `UNIX`, each file and directory has specific security attributes -->
+<!-- specifying who can read (`r`), write (`w`), execute -->
+<!-- (`x`) or do nothing (`-`) with the file or -->
+<!-- directory. These permissions are specified for three entities that may -->
+<!-- wish to manipulate the file (owner, specific group, and others). The -->
+<!-- group level is useful to assign permissions to a specified group of -->
+<!-- users (e.g., administrators, developers) but not everyone else.  -->
 
-Typing `ls -all` lists all files and sub-directories, their size, and
-permissions represented in a 10 character notation. The first
-character refers to the file type and is not related to
-permissions. The last nine are arranged in groups of three (triads)
-representing the ownership groups (owner, group, others). For example,
-when a file has the permission `|-rwxr-xr--|`, the owner of this
-file can read, write, and execute the file (`rwx`), the group
-can read and execute (`r-x`), while everyone else can only read
-(`r--`).
+<!-- Typing `ls -all` lists all files and sub-directories, their size, and -->
+<!-- permissions represented in a 10 character notation. The first -->
+<!-- character refers to the file type and is not related to -->
+<!-- permissions. The last nine are arranged in groups of three (triads) -->
+<!-- representing the ownership groups (owner, group, others). For example, -->
+<!-- when a file has the permission `|-rwxr-xr--|`, the owner of this -->
+<!-- file can read, write, and execute the file (`rwx`), the group -->
+<!-- can read and execute (`r-x`), while everyone else can only read -->
+<!-- (`r--`). -->
 
-There are two important commands to manipulate file
-permissions:
+<!-- There are two important commands to manipulate file -->
+<!-- permissions: -->
 
-- `chmod [FILENAME]` change file modes (i.e., permissions).
-- `chown [FILENAME]` change the ownership of a file.
+<!-- - `chmod [FILENAME]` change file modes (i.e., permissions). -->
+<!-- - `chown [FILENAME]` change the ownership of a file. -->
 
-Sometimes you want to perform operations that are only allowed to the
-administrator of the machine. You can do so (again, with caution!), by
-typing the word `sudo` (substitute user do) in front of the command. The system will require a
-password and, if you are authorized to use the `sudo` command,
-you will be able to perform the operation as an administrator. This
-command is very useful for installing new software.
+<!-- Sometimes you want to perform operations that are only allowed to the -->
+<!-- administrator of the machine. You can do so (again, with caution!), by -->
+<!-- typing the word `sudo` (substitute user do) in front of the command. The system will require a -->
+<!-- password and, if you are authorized to use the `sudo` command, -->
+<!-- you will be able to perform the operation as an administrator. This -->
+<!-- command is very useful for installing new software. -->
 
 ## Miscellaneous commands
 
@@ -818,7 +818,7 @@ print(c(input.file, number.replicates, starting.point))
 You can call the operating system from within `R` (assuming you're in `/advanced_computing_2/code`):
 
 ```{r, eval = TRUE}
-print(system("wc -l < ../../basic_computing_1/data/H938_Euro_chr6.geno"))
+system("wc -l < ../../basic_computing_1/data/H938_Euro_chr6.geno")
 ```
 
 You can also capture the output from the shell commands and save it
@@ -954,6 +954,40 @@ Many functions have a similar `str_***_all` version, returning all matches.
 - `str_replace(strings, pattern, newstring)` replaces the first matched `pattern` with `newstring`
 
 ## Exercises in groups
+
+### Extract primers and polymorphic sites
+In the file `data/Ptak_etal_2004.txt` you find a text version of the supplementary materials of Ptak *et al.* (PLoS Biology 2004, doi:10.1371/journal.pbio.0020155). 
+
+- Take a look at the file. You see that it first lists the primers used for the study (e.g., `TAP2-17-3’` -> `CTTGGATATAACACCAAACGCA`), and then the polymorphic sites for 24 chimpanzees (e.g., .
+- Read the text as a single string, intervaled by new lines 
+```{r}
+my_txt <- paste(readLines("../data/Ptak_etal_2004.txt"), collapse="\n")
+```
+- Use regular expressions to produce a data frame containing the primers used in the study:
+```{r, eval = FALSE}
+head(primers)
+```
+```
+         ID               Sequence
+1 TAP2-1-5’ GAGAATCACTTGAACCTGGGAG
+2 TAP2-2-5’ TTGTCCACAGTGTACCACATGA
+3 TAP2-3-5’ TATTTCTTCCTGGGGTTTCCTT
+4 TAP2-4-5’ CATGATGTGTCATGCTGAATTG
+5 TAP2-5-5’ ATAGAACAAGAACCAAAGCCCA
+6 TAP2-6-5’ GGACAACAGATAAAGTTGCCCT
+```
+- Write another regular expression to extract the polymorphic region for each chimp. Use `str_replace_all` to remove extra spaces and newlines. The results should look like:
+
+```
+  Chimp                                           Sequence
+1   311 ATACCCTGGAGGCAAGAATCTTCCGATAGACGCCAGTCCCTAGTTGT...
+2   312 GCACCCTGGAGGCAAGAGTCTTCCGATAGACGCCAGTCCCTAGTTGC...
+3   313 GCACCCTGGAGGCAAGAGTCTTCCGATAGACGCCAGTCCCCAGTTGT...
+4   314 GCACCCTGGAGGCAAGAGTCTTCCGATAGACCCCAGTCCCCAGTTGC...
+5   317 GCACCCTGGAGGTGGGGGCCCCCCAGGAGGCCCCAGCCCCCGGTCGT...
+6   320 GCACCCTGGAGATAAGGGCCCCCCAGGAGGCCCCAGCCCCCGGTCGT...
+```
+
 
 ### A map of *Science*
 
