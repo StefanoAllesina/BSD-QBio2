@@ -1,6 +1,6 @@
 Group,Long,Short,Pic
-G1,Arabidopsis thaliana,A.thaliana,https://github.com/StefanoAllesina/BSD-QBio2/raw/master/logo_group/Arabidopsis_thaliana.png
-G2,Arbacia punctulata,A.punctulata,TBD
+G1,Aequorea victoria,A.victoria,TBD
+G2,Arabacia punctulata,A.punctulata,TBD
 G3,Danio rerio,D.rerio,https://github.com/StefanoAllesina/BSD-QBio2/raw/master/logo_group/Danio_rerio.png
 G4,Drosophila melanogaster,D.melanogaster,https://github.com/StefanoAllesina/BSD-QBio2/raw/master/logo_group/Drosophila_melanogaster.png
 G5,Limulus polyphemus,L.polyphemus,TBD

@@ -41,7 +41,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Basic/Advanced computing I (LBG70)              
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Brilliant (Meigs)                 
+**7:15-8:00**         Talk – Vicky Prince (Meigs)                     
 ------------------    ------------------------------------------------
 
 ### Thursday, September 8 
@@ -55,7 +55,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Math. Foundations I (Ch1)                       
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Fabulous (Meigs)                  
+**7:15-8:00**         MBL Talk – Jennifer Morgan (Meigs)              
 ------------------    ------------------------------------------------
 
 ### Friday, September 9 
@@ -69,7 +69,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Basic/Advanced computing II (LBG70)             
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Incredible (Meigs)                
+**7:15-8:00**         MBL Talk – Roger Hanlon (Meigs)                 
 ------------------    ------------------------------------------------
 
 ### Saturday, September 10 
@@ -106,7 +106,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Workshop Novembre (LB374)                       
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Extraordinary (Meigs)             
+**7:15-8:00**         MBL Talk – David Remsen (Meigs)                 
 ------------------    ------------------------------------------------
 
 ### Tuesday, September 13 

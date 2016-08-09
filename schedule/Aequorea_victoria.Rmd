@@ -18,8 +18,8 @@ output:
 ---
 # BSD qBio$^2$ @ MBL
 
-## Group Schedule: *Arbacia punctulata*
-
+## Group Schedule: *Aequorea victoria*
+ ![](https://github.com/StefanoAllesina/BSD-QBio2/raw/master/logo_group/Arabidopsis_thaliana.png)
 
 ### Tuesday, September 6 
 
@@ -41,7 +41,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Basic/Advanced computing I (LBG70)              
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Brilliant (Meigs)                 
+**7:15-8:00**         Talk – Vicky Prince (Meigs)                     
 ------------------    ------------------------------------------------
 
 ### Thursday, September 8 
@@ -55,7 +55,7 @@ output:
 **2:30-2:45**         Coffee break (LB302)                            
 **2:45-4:30**         Math. Foundations I (Ch1)                       
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Fabulous (Meigs)                  
+**7:15-8:00**         MBL Talk – Jennifer Morgan (Meigs)              
 ------------------    ------------------------------------------------
 
 ### Friday, September 9 
@@ -65,19 +65,19 @@ output:
 **10:00-10:30**       Coffee break (LB302)                            
 **10:30-12:00**       Free time                                       
 **12:00-1:00**        Lunch (SWC)                                     
-**1:00-2:30**         Math. Foundations II (Ch1)                      
+**1:00-2:30**         Basic/Advanced computing II (LBG70)             
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-4:30**         Math. Foundations II (Ch1)                      
+**2:45-4:30**         Basic/Advanced computing II (LBG70)             
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Incredible (Meigs)                
+**7:15-8:00**         MBL Talk – Roger Hanlon (Meigs)                 
 ------------------    ------------------------------------------------
 
 ### Saturday, September 10 
 
 ------------------    ------------------------------------------------
-**8:30-10:00**        Basic/Advanced computing II (LBG70)             
+**8:30-10:00**        Math. Foundations II (Ch1)                      
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12:00**       Basic/Advanced computing II (LBG70)             
+**10:30-12:00**       Math. Foundations II (Ch1)                      
 **12:00-8:00**        Free time                                       
 ------------------    ------------------------------------------------
 
@@ -88,9 +88,9 @@ output:
 **10:00-10:30**       Coffee break (LB302)                            
 **10:30-12:00**       Workshop Cobey (LB263)                          
 **12:00-1:00**        Lunch (SWC)                                     
-**1:00-2:30**         Workshop Novembre (LB374)                       
+**1:00-2:30**         Workshop Vander Griend (LBG70)                  
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-4:30**         Workshop Novembre (LB374)                       
+**2:45-4:30**         Workshop Vander Griend (LBG70)                  
 **5:00-6:30**         Dinner (SWC)                                    
 **6:30-8:30**         Professional Development “Open House” (Loeb)    
 ------------------    ------------------------------------------------
@@ -98,27 +98,27 @@ output:
 ### Monday, September 12 
 
 ------------------    ------------------------------------------------
-**8:30-10:00**        Workshop Osborne (Ch1)                          
+**8:30-10:00**        Workshop Novembre (LB374)                       
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12:00**       Workshop Osborne (Ch1)                          
+**10:30-12:00**       Workshop Novembre (LB374)                       
 **12:00-1:00**        Lunch (SWC)                                     
-**1:00-2:30**         Workshop Vander Griend (LBG70)                  
+**1:00-2:30**         Workshop Osborne (Ch1)                          
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-4:30**         Workshop Vander Griend (LBG70)                  
+**2:45-4:30**         Workshop Osborne (Ch1)                          
 **5:00-6:30**         Dinner (SWC)                                    
-**7:15-8:00**         MBL Talk – Dr Extraordinary (Meigs)             
+**7:15-8:00**         MBL Talk – David Remsen (Meigs)                 
 ------------------    ------------------------------------------------
 
 ### Tuesday, September 13 
 
 ------------------    ------------------------------------------------
-**8:30-10:00**        Workshop Munro/Rust (LBG70)                     
+**8:30-10:00**        Workshop Munro/Rust (Ch1)                       
 **10:00-10:30**       Coffee break (LB302)                            
-**10:30-12:00**       Workshop Munro/Rust (LBG70)                     
+**10:30-12:00**       Workshop Munro/Rust (Ch1)                       
 **12:00-1:00**        Lunch (SWC)                                     
-**1:00-2:30**         Workshop Munro/Rust (LBG70)                     
+**1:00-2:30**         Workshop Munro/Rust (Ch1)                       
 **2:30-2:45**         Coffee break (LB302)                            
-**2:45-4:30**         Workshop Munro/Rust (LBG70)                     
+**2:45-4:30**         Workshop Munro/Rust (Ch1)                       
 **5:00-6:30**         Dinner (SWC)                                    
 **5:00-6:00**         Wrapping up (Meigs)                             
 **6:00-8:00**         BBQ (Terrace)                                   
