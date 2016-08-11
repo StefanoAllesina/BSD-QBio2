@@ -1,0 +1,199 @@
+---
+fontsize: 10pt
+geometry: margin=0.75in
+header-includes:
+  - \usepackage{fancyhdr}
+  - \pagestyle{fancy}
+  - \usepackage{lmodern}
+  - \usepackage{xcolor}
+  - \usepackage{sectsty}
+  - \definecolor{bsdqbio}{rgb}{0.44, 0.16, 0.39}
+  - \sectionfont{\color{bsdqbio}}
+  - \subsectionfont{\color{bsdqbio}}
+  - \subsubsectionfont{\color{bsdqbio}}
+  - \setlength\heavyrulewidth{0ex}
+output:
+  pdf_document:
+    fig_height: 2
+    latex_engine: xelatex
+    keep_tex: true
+---
+# BSD qBio$^2$ @ MBL
+
+## General Schedule
+### Tuesday, September 6 
+
+------------------    ------------------------------------------------
+**2:45-5:00**         Check-in                                        
+**5:00-6:30**         Dinner                                          
+**8:15-9:00**         Introduction – Allesina and Palmer              
+------------------    ------------------------------------------------
+
+### Wednesday, September 7 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Free time                                        (*M.mulatta M.musculus O.bimaculoides P.polytes*)
+                      Imaging                                          (*S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Trip on the Gemma                                (*A.thaliana C.elegans*)
+                      Visit Marine Resources Center                    (*D.melanogaster D.rerio*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Free time                                        (*M.mulatta M.musculus O.bimaculoides P.polytes*)
+                      Imaging                                          (*S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Trip on the Gemma                                (*D.melanogaster D.rerio*)
+                      Visit Marine Resources Center                    (*A.thaliana C.elegans*)
+**12:00-12:45**       Lunch                                           
+**12:45-1:00**        MBL Orientation                                 
+**1:00-2:30**         Basic/Advanced computing I                       (*A.thaliana C.elegans D.melanogaster D.rerio M.mulatta M.musculus*)
+                      Math. Foundations I                              (*O.bimaculoides P.polytes S.aegyptiacus T.roseae T.thermophila X.laevis*)
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Basic/Advanced computing I                       (*A.thaliana C.elegans D.melanogaster D.rerio M.mulatta M.musculus*)
+                      Math. Foundations I                              (*O.bimaculoides P.polytes S.aegyptiacus T.roseae T.thermophila X.laevis*)
+**5:00-6:30**         Dinner                                          
+**7:15-8:00**         Welcome – Nishi; Intro to Grad School – Prince  
+------------------    ------------------------------------------------
+
+### Thursday, September 8 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Free time                                        (*S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Imaging                                          (*A.thaliana C.elegans D.melanogaster D.rerio*)
+                      Trip on the Gemma                                (*M.mulatta M.musculus*)
+                      Visit Marine Resources Center                    (*O.bimaculoides P.polytes*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Free time                                        (*S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Imaging                                          (*A.thaliana C.elegans D.melanogaster D.rerio*)
+                      Trip on the Gemma                                (*O.bimaculoides P.polytes*)
+                      Visit Marine Resources Center                    (*M.mulatta M.musculus*)
+**12:00-1:00**        Lunch                                           
+**1:00-2:30**         Basic/Advanced computing I                       (*O.bimaculoides P.polytes S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Math. Foundations I                              (*A.thaliana C.elegans D.melanogaster D.rerio M.mulatta M.musculus*)
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Basic/Advanced computing I                       (*O.bimaculoides P.polytes S.aegyptiacus T.roseae T.thermophila X.laevis*)
+                      Math. Foundations I                              (*A.thaliana C.elegans D.melanogaster D.rerio M.mulatta M.musculus*)
+**5:00-6:30**         Dinner                                          
+**7:15-8:00**         MBL Talk – Jennifer Morgan                      
+------------------    ------------------------------------------------
+
+### Friday, September 9 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Free time                                        (*A.thaliana C.elegans D.melanogaster D.rerio*)
+                      Imaging                                          (*M.mulatta M.musculus O.bimaculoides P.polytes*)
+                      Trip on the Gemma                                (*S.aegyptiacus T.thermophila*)
+                      Visit Marine Resources Center                    (*T.roseae X.laevis*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Free time                                        (*A.thaliana C.elegans D.melanogaster D.rerio*)
+                      Imaging                                          (*M.mulatta M.musculus O.bimaculoides P.polytes*)
+                      Trip on the Gemma                                (*T.roseae X.laevis*)
+                      Visit Marine Resources Center                    (*S.aegyptiacus T.thermophila*)
+**12:00-1:00**        Lunch                                           
+**1:00-2:30**         Basic/Advanced computing II                      (*A.thaliana D.rerio M.mulatta O.bimaculoides S.aegyptiacus T.roseae*)
+                      Math. Foundations II                             (*C.elegans D.melanogaster M.musculus P.polytes T.thermophila X.laevis*)
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Basic/Advanced computing II                      (*A.thaliana D.rerio M.mulatta O.bimaculoides S.aegyptiacus T.roseae*)
+                      Math. Foundations II                             (*C.elegans D.melanogaster M.musculus P.polytes T.thermophila X.laevis*)
+**5:00-6:30**         Dinner                                          
+**7:15-8:00**         MBL Talk – Roger Hanlon                         
+------------------    ------------------------------------------------
+
+### Saturday, September 10 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Basic/Advanced computing II                      (*C.elegans D.melanogaster M.musculus P.polytes T.thermophila X.laevis*)
+                      Math. Foundations II                             (*A.thaliana D.rerio M.mulatta O.bimaculoides S.aegyptiacus T.roseae*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Basic/Advanced computing II                      (*C.elegans D.melanogaster M.musculus P.polytes T.thermophila X.laevis*)
+                      Math. Foundations II                             (*A.thaliana D.rerio M.mulatta O.bimaculoides S.aegyptiacus T.roseae*)
+**12:00-8:00**        Free time                                       
+------------------    ------------------------------------------------
+
+### Sunday, September 11 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Workshop Cobey                                   (*A.thaliana C.elegans D.rerio*)
+                      Workshop Novembre                                (*O.bimaculoides P.polytes S.aegyptiacus*)
+                      Workshop Osborne                                 (*T.roseae T.thermophila X.laevis*)
+                      Workshop Vander Griend                           (*D.melanogaster M.mulatta M.musculus*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Workshop Cobey                                   (*A.thaliana C.elegans D.rerio*)
+                      Workshop Novembre                                (*O.bimaculoides P.polytes S.aegyptiacus*)
+                      Workshop Osborne                                 (*T.roseae T.thermophila X.laevis*)
+                      Workshop Vander Griend                           (*D.melanogaster M.mulatta M.musculus*)
+**12:00-1:00**        Lunch                                           
+**1:00-2:30**         Workshop Cobey                                   (*D.melanogaster O.bimaculoides T.thermophila*)
+                      Workshop Novembre                                (*C.elegans M.mulatta X.laevis*)
+                      Workshop Osborne                                 (*D.rerio M.musculus S.aegyptiacus*)
+                      Workshop Vander Griend                           (*A.thaliana P.polytes T.roseae*)
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Workshop Cobey                                   (*D.melanogaster O.bimaculoides T.thermophila*)
+                      Workshop Novembre                                (*C.elegans M.mulatta X.laevis*)
+                      Workshop Osborne                                 (*D.rerio M.musculus S.aegyptiacus*)
+                      Workshop Vander Griend                           (*A.thaliana P.polytes T.roseae*)
+**5:00-6:30**         Dinner                                          
+**6:30-7:10**         Life after PhD a)                                (*D.rerio T.thermophila*)
+                      Life after PhD b)                                (*D.melanogaster S.aegyptiacus*)
+                      Navigating first year a)                         (*A.thaliana X.laevis*)
+                      Navigating first year b)                         (*C.elegans T.roseae*)
+                      Publishing primer a)                             (*M.mulatta P.polytes*)
+                      Publishing primer b)                             (*M.musculus O.bimaculoides*)
+**7:20-8:00**         Life after PhD a)                                (*A.thaliana X.laevis*)
+                      Life after PhD b)                                (*C.elegans T.roseae*)
+                      Navigating first year a)                         (*M.mulatta P.polytes*)
+                      Navigating first year b)                         (*M.musculus O.bimaculoides*)
+                      Publishing primer a)                             (*D.rerio T.thermophila*)
+                      Publishing primer b)                             (*D.melanogaster S.aegyptiacus*)
+**8:10-8:50**         Life after PhD a)                                (*M.mulatta P.polytes*)
+                      Life after PhD b)                                (*M.musculus O.bimaculoides*)
+                      Navigating first year a)                         (*D.rerio T.thermophila*)
+                      Navigating first year b)                         (*D.melanogaster S.aegyptiacus*)
+                      Publishing primer a)                             (*A.thaliana X.laevis*)
+                      Publishing primer b)                             (*C.elegans T.roseae*)
+------------------    ------------------------------------------------
+
+### Monday, September 12 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Workshop Cobey                                   (*M.mulatta S.aegyptiacus T.roseae*)
+                      Workshop Novembre                                (*A.thaliana M.musculus T.thermophila*)
+                      Workshop Osborne                                 (*C.elegans D.melanogaster P.polytes*)
+                      Workshop Vander Griend                           (*D.rerio O.bimaculoides X.laevis*)
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Workshop Cobey                                   (*M.mulatta S.aegyptiacus T.roseae*)
+                      Workshop Novembre                                (*A.thaliana M.musculus T.thermophila*)
+                      Workshop Osborne                                 (*C.elegans D.melanogaster P.polytes*)
+                      Workshop Vander Griend                           (*D.rerio O.bimaculoides X.laevis*)
+**12:00-1:00**        Lunch                                           
+**1:00-2:30**         Workshop Cobey                                   (*M.musculus P.polytes X.laevis*)
+                      Workshop Novembre                                (*D.melanogaster D.rerio T.roseae*)
+                      Workshop Osborne                                 (*A.thaliana M.mulatta O.bimaculoides*)
+                      Workshop Vander Griend                           (*C.elegans S.aegyptiacus T.thermophila*)
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Workshop Cobey                                   (*M.musculus P.polytes X.laevis*)
+                      Workshop Novembre                                (*D.melanogaster D.rerio T.roseae*)
+                      Workshop Osborne                                 (*A.thaliana M.mulatta O.bimaculoides*)
+                      Workshop Vander Griend                           (*C.elegans S.aegyptiacus T.thermophila*)
+**5:00-6:30**         Dinner                                          
+**7:15-8:00**         MBL Talk – David Remsen                         
+------------------    ------------------------------------------------
+
+### Tuesday, September 13 
+
+------------------    ------------------------------------------------
+**8:30-10:00**        Workshop Munro/Rust                             
+**10:00-10:30**       Coffee break                                    
+**10:30-12:00**       Workshop Munro/Rust                             
+**12:00-1:00**        Lunch                                           
+**1:00-2:30**         Workshop Munro/Rust                             
+**2:30-2:45**         Coffee break                                    
+**2:45-4:30**         Workshop Munro/Rust                             
+**5:00-6:30**         Dinner                                          
+**5:00-6:00**         Wrapping up                                     
+**6:00-8:00**         BBQ                                             
+------------------    ------------------------------------------------
+
+### Wednesday, September 14 
+
+------------------    ------------------------------------------------
+**10:00-10:30**       Departure for BOS                               
+------------------    ------------------------------------------------
+

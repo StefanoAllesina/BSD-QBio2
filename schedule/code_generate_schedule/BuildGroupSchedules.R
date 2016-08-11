@@ -7,6 +7,7 @@ activities <- read.csv("tables/common.csv", stringsAsFactors = FALSE)
 activities <- rbind(activities, read.csv("tables/tutorials.csv", stringsAsFactors = FALSE))
 activities <- rbind(activities, read.csv("tables/workshops.csv", stringsAsFactors = FALSE))
 activities <- rbind(activities, read.csv("tables/workshop5.csv", stringsAsFactors = FALSE))
+activities <- rbind(activities, read.csv("tables/pd.csv", stringsAsFactors = FALSE))
 # Load activities names
 activities_names <- read.csv("tables/activities_name_room.csv", stringsAsFactors = FALSE)
 # Load group names
