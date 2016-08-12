@@ -27,6 +27,7 @@ pdftk tmp.pdf ../other_docs/cover_workshops.pdf output tmp2.pdf; mv tmp2.pdf tmp
 ## Cobey
 pdftk tmp.pdf ../../workshops/cobey/README.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Novembre
+pdftk tmp.pdf ../../workshops/novembre/Handouts/MBL_WorkshopJN.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 # MISSING
 ## Osborne
 # MISSING
