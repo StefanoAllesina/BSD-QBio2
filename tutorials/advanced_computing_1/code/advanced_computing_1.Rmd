@@ -67,7 +67,7 @@ You can see that "only" 11,099 trips lasted less than three minutes. We have use
 
 > **Exercise:** what does this do?
 >```{r, eval=FALSE}
- filter(divvy, gender == "Male", tripduration > 60 & tripduration < 180)
+ filter(divvy, gender == "Male", tripduration > 60, tripduration < 180)
  ```
 
 We can also select particular variables using the function `select(tbl, cols to select)`. For example, select `from_station_name` and `from_station_id`:
@@ -195,9 +195,9 @@ Graphics. It follows the idea of a well-formed sentence that is composed of a su
 - **Scale** Do we want the sizes and shapes of the points to scale according to some value? Linearly? Logarithmically? Which palette
     of colors do we want to use?
 
-- **Coordinate** We need to choose a coordinate systems (e.g., Cartesian, polar).
+- **Coordinate** We need to choose a coordinate system (e.g., Cartesian, polar).
 
-- **Faceting** Do we want to produce different panels, partitioning the data according to one of the variables?
+- **Faceting** Do we want to produce different panels, partitioning the data according to one (or more) of the variables?
 
 This basic grammar can be extended by adding statistical transformations of the data (e.g., regression, smoothing), multiple layers, adjustment of position (e.g., stack bars instead of plotting them side-by-side), annotations, and so on.
 
@@ -370,7 +370,7 @@ We can use different color scales. We can convert the capacity to a factor, to u
 
 ```{r, eval = FALSE}
 pl <- ggplot(data = divvy_stations) + 
-  aes(x = longitude, y = latitude, colour = factor(dpcapacity)) + 
+  aes(x = longitude, y = latitude, colour = as.factor(dpcapacity)) + 
   geom_point()
 pl + scale_colour_brewer()
 pl + scale_colour_brewer(palette = "Spectral")
@@ -406,7 +406,7 @@ pl + theme_wsj() # like "The Wall Street Journal"
 
 ## Faceting
 
-In many cases, we would like to produce a multi-panel graph, in which each panel shows the data for a certain combination of parameters. In `ggplot` this is called *faceting*: the command `facet_grid` is used when you want to produce a grid of panels, in which all the panels in the same row (column) have a parameter in common; `facet_wrap` is used when the different panels do not have features in common.
+In many cases, we would like to produce a multi-panel graph, in which each panel shows the data for a certain combination of parameters. In `ggplot` this is called *faceting*: the command `facet_grid` is used when you want to produce a grid of panels, in which all the panels in the same row (column) have axis-ranges in common; `facet_wrap` is used when the different panels do not have axis-ranges in common.
 
 For example:
 ```{r, eval = FALSE}
@@ -604,7 +604,7 @@ flows <- divvy %>%
   group_by(from_station_id, to_station_id) %>% 
   summarise(trips = n())
 # transform into a matrix
-flows_mat <- as.matrix(flows %>% spread(to_station_id, trips, fill = 0))
+flows_mat <- flows %>% spread(to_station_id, trips, fill = 0) %>% as.matrix()
 # remove the first col (use it for row name)
 rownames(flows_mat) <- flows_mat[,1]
 flows_mat <- flows_mat[,-1]
@@ -612,7 +612,7 @@ flows_mat <- flows_mat[,-1]
 flows_mat[1:10, 1:10]
 ```
 
-Now we're going to rank stations according to their PageRank, the algorithm at the hearth of Google's search engine. The idea of PageRank is to simulate a random walk on a set of web-pages: at each step, the random walker can follow a link (with a probability proportional its weight), or "teleport" to another page at random (with small probability). The walk therefore describes a Markov Chain, whose stationary distribution (Perron eigenvector) is the PageRank score for all the nodes. This value indicates how "central" and important a node in the network is.
+Now we're going to rank stations according to their PageRank, the algorithm at the heart of Google's search engine. The idea of PageRank is to simulate a random walk on a set of web-pages: at each step, the random walker can follow a link (with a probability proportional its weight), or "teleport" to another page at random (with small probability). The walk therefore describes a Markov Chain, whose stationary distribution (Perron eigenvector) is the PageRank score for all the nodes. This value indicates how "central" and important a node in the network is.
 
 Mathematically, we want to calculate the Perron eigenvector of the matrix:
 

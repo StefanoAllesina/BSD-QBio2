@@ -16,7 +16,7 @@ output:
 - **Installation:** To produce well-documented code, we need to instal the package `knitr`. We will also use the package `MASS` for statistics.
 
 # Packages
-`R` is the most popular statistical computing software among biologists due to its highly specialized packages, often written from biologists for biologists. You can contribute a package, too! The `RStudio` support [(`goo.gl/harVqF`)](http://goo.gl/harVqF) provides guidance on how to start developing `R` packages  and Hadley Wickham's free online book [(`r-pkgs.had.co.nz`)](http://r-pkgs.had.co.nz) will make you a pro.
+`R` is the most popular statistical computing software among biologists due to its highly specialized packages, often written from biologists for biologists. You can contribute a package too! The `RStudio` support [(`goo.gl/harVqF`)](http://goo.gl/harVqF) provides guidance on how to start developing `R` packages  and Hadley Wickham's free online book [(`r-pkgs.had.co.nz`)](http://r-pkgs.had.co.nz) will make you a pro.
 
 You can find highly specialized packages to address your research questions. Here are some suggestions for finding an appropriate package. The Comprehensive R Archive Network (CRAN) offers several ways to find specific packages for your task. You can either browse packages [(`goo.gl/7oVyKC`)](http://goo.gl/7oVyKC) and their short description or select a scientific field of interest [(`goo.gl/0WdIcu`)](http://goo.gl/0WdIcu) to browse through a compilation of packages related to each discipline.
 
@@ -264,7 +264,7 @@ Whenever possible, use randomizations, rather than relying on classical tests. T
 
 We have written code that analyzes one year of data. If we wanted to repeat the analysis on a different year, we would have to modify the code slightly. Instead of doing that, we can write a function that allows us to select a given year, and randomize the data. To do so, we need to learn about functions.
 
-The `R` community provides about 7,000 packages. Still, sometimes there isn't an already made function capable to do what you need. In these cases, you can write your own functions. In fact, it is in general a good idea to always divide your analysis into functions, and then write a small "master" program that calls the functions and performs the analysis. In this way, the code will be much more legible, and you will be able to recycle the functions for your other projects.
+The `R` community provides about 7,000 packages. Still, sometimes there isn't an already made function capable of doing what you need. In these cases, you can write your own functions. In fact, it is in general a good idea to always divide your analysis into functions, and then write a small "master" program that calls the functions and performs the analysis. In this way, the code will be much more legible, and you will be able to recycle the functions for your other projects.
 
 A function in `R` has this form:
 ```{r, eval = FALSE}
@@ -272,7 +272,7 @@ my_function_name <- function(arguments of the function){
   # Body of the function
   # ...
   # 
-  return(return value) # this is optional
+  return(return_value) # this is optional
 }
 ```
 
@@ -385,7 +385,7 @@ Dividing it into blocks, we need to wite:
 - a function to perform the Kendall's test
 - a master code putting it all together
 
-Our first function
+Our first function:
 ```{r}
 load_data <- function(filename){
   papers <- read.csv(filename, stringsAsFactors = FALSE)
@@ -395,7 +395,7 @@ load_data <- function(filename){
 }
 ```
 
-Make sure that everything is well
+Make sure that everything is well by testing our function on the data:
 ```{r}
 for (my_file in list.files("../data/citations", full.names = TRUE)){
   print(my_file)
@@ -447,7 +447,7 @@ call_Kendall_by_year <- function(papers){
 }
 ```
 
-Now a master function to test that the program is working
+Now a master function to test that the program is working:
 ```{r}
 analyze_journal <- function(my_file){
   # First, the linear model
@@ -485,7 +485,7 @@ When doing experiments, we typically keep track of everything we do in a laborat
 
 `RStudio` makes it very easy to build a computational laboratory notebook. First, create a new `R Markdown`  file (choose `File` -> `New File` -> `R Markdown` from the menu). 
 
-The gist of it is that you write a text file (`.Rmd`). The file is then read by an iterpreter that transforms it into an `.html` or `.pdf` file, and even into a Word document. You can use special syntax to render the text in different ways. For example,
+The gist of it is that you write a text file (`.Rmd`). The file is then read by an iterpreter that transforms it into an `.html` or `.pdf` file, or even into a Word document. You can use special syntax to render the text in different ways. For example,
 
 ```
 ***********
@@ -562,7 +562,7 @@ You can find inspiration in the notes for the Boot Camp: both the notes for Basi
 # Exercises in groups
 
 ## Google Flu Trends
-Preis & Moat (2014, `dx.doi.org/10.1098/rsos.140095`) showed that Google Flu Trends are correlated with outpatient visits due to influenza-like illness. You find the data, along with its description, in `data/GoogleFlu`.
+Preis & Moat (2014, `dx.doi.org/10.1098/rsos.140095`) showed that Google Flu Trends are correlated with outpatient visits due to influenza-like illness. You can find the data, along with its description, in `data/GoogleFlu`.
 
 - Read the data
 - Plot number of visits vs. `GoogleFluTrends`

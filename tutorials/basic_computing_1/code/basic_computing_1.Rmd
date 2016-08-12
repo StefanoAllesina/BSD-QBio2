@@ -46,7 +46,7 @@ A little history: `R` was modeled after the commercial statistical software `S` 
 
 # RStudio
 
-For this introduction, we're going to use `RStudio`, and Integrated Development Environment (IDE) for `R`. The main advantage is that the environment will look identical irrespective of your computer architecture (Linux, Windows, Mac). Also, `RStudio` makes writing code much easier by automatically completing commands and file names (simply type the beginning of the name and press `Tab`), and allowing you to easily inspect data and code.
+For this introduction, we're going to use `RStudio`, an Integrated Development Environment (IDE) for `R`. The main advantage is that the environment will look identical irrespective of your computer architecture (Linux, Windows, Mac). Also, `RStudio` makes writing code much easier by automatically completing commands and file names (simply type the beginning of the name and press `Tab`), and allowing you to easily inspect data and code.
 
 Typically, an `RStudio` window contains four panels:
 
@@ -57,9 +57,9 @@ Typically, an `RStudio` window contains four panels:
 
 # How to write an `R` program
 
-An `R` program is simply a list of commands, which are executed one after the other. The commands are witten in a text file (with extension `.R`). When `R` executes the program, it will start from the beginning of the file and proceed toward the end of the file. Every time `R` encounters a command, it will execute it. Special commands allow to modify this basic flow of the program by for example executing a series of commands only when a condition is met, or repeating the execution of a series of commands multiple times.
+An `R` program is simply a list of commands, which are executed one after the other. The commands are witten in a text file (with extension `.R`). When `R` executes the program, it will start from the beginning of the file and proceed toward the end of the file. Every time `R` encounters a command, it will execute it. Special commands can modify this basic flow of the program by, for example, executing a series of commands only when a condition is met, or repeating the execution of a series of commands multiple times.
 
-Note that if you were to copy and paste (or type) the code into the **Console** you would obtain exactly the same result. Writing a program is however advatageous because it can be automated and shared with other researchers. Moreover, after a while you will have a large code base, so that you will recycle much of your code in several programs.
+Note that if you were to copy and paste (or type) the code into the **Console** you would obtain exactly the same result. Writing a program is advatageous, however, because it can be automated and shared with other researchers. Moreover, after a while you will have a large code base, so that you can recycle much of your code in several programs.
 
 # The most basic operation: assignment
 
@@ -340,7 +340,7 @@ you obtain a matrix:
 dim(M[,,1])
 ```
 
-This can be problematic when your code for example expects an array and `R` turns your data into a matrix (or you expect a matrix but find a vector). To avoid this behavior, add `drop = FALSE` when subsetting:
+This can be problematic, for example, when your code expects an array and `R` turns your data into a matrix (or you expect a matrix but find a vector). To avoid this behavior, add `drop = FALSE` when subsetting:
 ```{r}
 dim(M[,,1, drop = FALSE])
 ```
@@ -404,12 +404,12 @@ Similarly, you can save your data frames using `write.table` or `write.csv`. Sup
 
 ```{r, eval = FALSE}
 write.csv(MyDF, "MyFile.csv") 
-write.csv("MyFile.csv", append = TRUE) # Append to the end of the file. 
-write.csv("MyFile.csv", row.names = TRUE) # Include the row names.
-write.csv("MyFile.csv", col.names = FALSE) # Do not include column names.
+write.csv(MyDF, "MyFile.csv", append = TRUE) # Append to the end of the file. 
+write.csv(MyDF, "MyFile.csv", row.names = TRUE) # Include the row names.
+write.csv(MyDF, "MyFile.csv", col.names = FALSE) # Do not include column names.
 ```
 
-Let's look at an example: Read a file containing data on the 6th chromosome for a number of Europeans (Data adapted from [Stanford HGDP SNP Genotyping Data](hagsc.org/hgdp/) by John   Novembre.):
+Let's look at an example: Read a file containing data on the 6th chromosome for a number of Europeans (Data adapted from [Stanford HGDP SNP Genotyping Data](hagsc.org/hgdp/) by John   Novembre):
 
 ```{r}
 ch6 <- read.table("../data/H938_Euro_chr6.geno", header = TRUE)
@@ -449,7 +449,7 @@ The data contains the number of homozygotes (`nA1A1`, `nA2A2`) and heterozygotes
 
 # Conditional branching
 
-Now we turn to writing actual programs in the **Source code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open and `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
+Now we turn to writing actual programs in the **Source code** panel. To start a new `R` program, press `Ctrl + Shift + N`. This will open an `Untitled` script. Save the script by pressing `Ctrl + S`: save it as `conditional.R` in the directory `basic_computing_1/code/`. To make sure you're working in the directory where the script is contained, on the menu on the top choose `Session -> Set Working Directory -> To Source File Location`.
 
 Now type the following script:
 ```{r, eval = FALSE}
