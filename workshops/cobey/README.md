@@ -1,3 +1,6 @@
+---
+output: pdf_document
+---
 # Unraveling dynamics from time series
 Instructors: [Sarah Cobey](http://cobeylab.uchicago.edu/people/cobey) and [Sylvia Ranjeva](http://cobeylab.uchicago.edu/people/ranjeva)
 
