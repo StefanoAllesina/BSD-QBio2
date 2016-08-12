@@ -587,10 +587,13 @@ num_trips <- inner_join(num_trips,
                           rename(to_station_id = id, 
                                  x2 = longitude, 
                                  y2 = latitude))
+
+num_trips$trips <- as.numeric(num_trips$trips)
+
 # Now we can plot all the trips!
 ggplot(data = num_trips, 
        aes(x = x1, y = y1, xend = x2, yend = y2, 
-           colour = trips, alpha = I(trips/max(trips)))) + 
+           alpha = I(trips / max(trips))) )+ 
   geom_curve() + theme_minimal()
 ```
 
