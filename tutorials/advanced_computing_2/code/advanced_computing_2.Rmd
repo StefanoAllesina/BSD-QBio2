@@ -127,7 +127,7 @@ one, the `bash` shell, which is the default shell in both
 Ubuntu and OS X.
 
 In Ubuntu, you can open a shell by pressing `Ctrl + Alt + t` or
-by opening the dash (hold the `Meta` key) and typing
+by opening the dash (press the `Super` key) and typing
 `Terminal`. In OS X, you want to open the application
 `Terminal.app`, which is located in the folder *Utilities*
 within *Applications*. Alternatively, you can type `Terminal` in
@@ -148,7 +148,7 @@ multiple completions are possible, you can display them all by hitting
 the `Tab` key twice). Additionally, you can navigate the
 history of commands you typed by using the up/down arrows (you do not
 need to re-type a command that you recently executed). There are also
-shortcuts that help pace through long lines of code:
+shortcuts that help when dealing with long lines of code:
 
 
 - `Ctrl + A` Go to the beginning of the line 
@@ -189,7 +189,7 @@ each command is described in detail in its manual page, which can be
 accessed directly from the shell by typing `man [COMMAND OF YOUR CHOICE]` (not available in `Git Bash`). Use arrows to scroll up and down and hit `q`
 to close the manual page. Checking the exact behavior of a command is
 especially important, given that the shell will execute any command
-you type without asking whether you know what you're doing (so that it
+you type without asking whether you know what you're doing (such that it
 will promptly remove all of your files, if that's the command you
 typed). You may be used to more forgiving (and slightly patronizing)
 operating systems in which a pop-up window will warn you whenever
@@ -305,15 +305,15 @@ data in a single line of commands. First, we show how to redirect the
 output of a command into a file:
 
 ```
-$ [COMMAND] > filename
+$ [COMMAND] > [FILENAME]
 ```
 
-Note that if the file `filename` exists, it will be
+Note that if the file `[FILENAME]` exists, it will be
 overwritten. If instead we want to append to an existing file, we can
 use the `>>` symbol as in the following line:
 
 ```
-$ [COMMAND] >> filename
+$ [COMMAND] >> [FILENAME]
 ```
 
 When the command is very long and complex, we might want to
@@ -321,7 +321,7 @@ redirect the content of a file as input to a command, "reversing"
 the flow:
 
 ```
-$ [COMMAND] < filename
+$ [COMMAND] < [FILENAME]
 ```
 
 To run a few examples, let's start by moving to our `code` directory:
@@ -516,7 +516,7 @@ $ echo '123456789' | tr 1-5 0
 000006789
 ```
 
-Substitute lower-case letters with upper-case:
+Substitute lower-case letters with upper-case (note the one-to-one mapping):
 
 ```
 $ echo 'ACtGGcAaTT' | tr actg ACTG
@@ -553,11 +553,15 @@ abbbb
 Note that the command `tr` reads standard input, and does not operate on files directly. However, we can use pipes in conjunction with `cat`, `head`, `cut`, etc. to create input for `tr`:
 
 ```
-$  tr ' ' '\t' < inputfile.csv > outputfile.csv
+$  tr ' ' '\t' < [INPUTFILE] > [OUTPUTFILE]
 ```
 
-In this example we input `inputfile.csv` to the `tr` command to replace all spaces with tabs. Note the use of quotes to specify the space
-character.  The tab is indicated by `\t` and is called a "meta-character". We use the backslash to signal that the following character should not be interpreted literally, but rather is a special code referring to a character that is difficult to represent otherwise.
+In this example we input `[INPUTFILE]` to the `tr` command to replace all spaces
+with tabs. Note the use of quotes to specify the space character.  The tab is
+indicated by `\t` and is called a "meta-character". We use the backslash to
+signal that the following character should not be interpreted literally, but
+rather is a special code referring to a character that is difficult to represent
+otherwise.
 
 Now we can apply the command `tr` and the commands we have
 showcased earlier to create a new file containing a subset of the data
@@ -604,7 +608,7 @@ numbers (option `-n`); second, we want larger values first
 according to the sixth column (option `-k 6`):
 
 ```
-$ tail -n +2 ../data/Pacifici2013_data.csv |cut -d ';' -f 2-6 | tr -s ';' ' ' | sort -r -n -k 6
+$ tail -n +2 ../data/Pacifici2013_data.csv |cut -d ';' -f 2-6 | tr -s ';' ' ' | sort -n -r -k 6
 ```
 
 That's it. We have created our first complex pipeline. To complete the
@@ -634,7 +638,7 @@ storage.
 that match a given pattern. You can return or count all occurrences of
 the pattern in a large text file without ever opening
 it. `grep` is based on the concept of regular expressions,
-which we will cover just below (but use `R`, as the syntax is slightly different).
+which we will cover just below (but using `R`, in which the syntax is slightly different).
 
 We will test the basic features of `grep` using the file we
 just created. The file contains data on

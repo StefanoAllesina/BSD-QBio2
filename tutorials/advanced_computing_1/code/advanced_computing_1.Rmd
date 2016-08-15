@@ -593,8 +593,8 @@ num_trips$trips <- as.numeric(num_trips$trips)
 # Now we can plot all the trips!
 ggplot(data = num_trips, 
        aes(x = x1, y = y1, xend = x2, yend = y2, 
-           alpha = I(trips / max(trips))) )+ 
-  geom_curve() + theme_minimal()
+           alpha = trips / max(trips)) )+
+  geom_curve() + scale_alpha_identity() + theme_minimal()
 ```
 
 # Project: network analysis of Divvy data
