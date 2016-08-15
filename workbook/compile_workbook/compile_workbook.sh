@@ -32,6 +32,6 @@ pdftk tmp.pdf ../../workshops/novembre/Handouts/MBL_WorkshopJN.pdf output tmp2.p
 ## Osborne
 # MISSING
 ## Vander Griend
-# Non-extistent
+pdftk tmp.pdf ../../workshops/vander_griend/README.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Munro/Rust
 pdftk tmp.pdf ../../workshops/cell_cycle/CellCycleTutorial.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
