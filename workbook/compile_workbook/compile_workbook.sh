@@ -11,9 +11,9 @@ pdftk tmp.pdf ../other_docs/cover_tutorials.pdf output tmp2.pdf; mv tmp2.pdf tmp
 ## Imaging
 pdftk tmp.pdf ../../tutorials/imaging/data/ImageProcessingExercises.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Math I
-# MISSING
-## Math II
-# MISSING
+pdftk tmp.pdf ../../tutorials/foundations_1/foundations_1_prob_and_inference.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+# Math II
+pdftk tmp.pdf ../../tutorials/foundations_2/foundations_2_dynamical_systems.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Basic I
 pdftk tmp.pdf ../../tutorials/basic_computing_1/code/basic_computing_1.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Basic II

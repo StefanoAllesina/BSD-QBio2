@@ -1,6 +1,6 @@
 ## Welcome
 
-This page contains important information about the [Second BSD-qBio Bootcamp @ MBL](http://bsdgrad.uchicago.edu/page/mbl-quantitative-approaches-bootcamp), which will be held at the [Marine Biological Laboratory](http://www.mbl.edu/) in Woods Hole, MA, on Sept 6-14, 2016.
+This page contains important information about the [Second BSD-qBio Boot Camp @ MBL](http://bsdgrad.uchicago.edu/page/mbl-quantitative-approaches-bootcamp), which will be held at the [Marine Biological Laboratory](http://www.mbl.edu/) in Woods Hole, MA, on Sept 6-14, 2016.
 
 More that 90 incoming graduate students from the different programs in the [Division of Biological Sciences](http://www.bsd.uchicago.edu/) at the [University of Chicago](http://www.uchicago.edu) will participate.
 
@@ -60,13 +60,15 @@ We're going to have students using Windows, OSX, and Linux. Whatever your platfo
 
 - Once installed R and RStudio, open RStudio and **install the following packages**:
   - ggplot2
+  - ggthemes
   - dplyr
   - tidyr
   - stringr
   - deSolve
   - lubridate
-  - ggthemes
-
+  - reshape2
+  - phaseR
+  
   You can find instructions on how to install R packages in RStudio [here](https://www.youtube.com/watch?v=3RWb5U3X-T8).
 
 - **Install ImageJ**: go to [this page](http://imagej.nih.gov/ij/docs/install/) and follow the instructions for your platform.
@@ -77,7 +79,7 @@ If you are using Windows, you need to install a UNIX emulator. We suggest downlo
 
 ## Downloading the data
 
-There are two options: 
+It is very important to **download the data** before you leave for MBL, as the files are quite large (~450Mb if you download the repository, ~250Mb if you choose the zip file). There are two options: 
 
 - If you're familiar with `Git`, clone the repository
 ```
