@@ -28,10 +28,14 @@ pdftk tmp.pdf ../other_docs/cover_workshops.pdf output tmp2.pdf; mv tmp2.pdf tmp
 pdftk tmp.pdf ../../workshops/cobey/README.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Novembre
 pdftk tmp.pdf ../../workshops/novembre/Handouts/MBL_WorkshopJN.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
-# MISSING
 ## Osborne
-# MISSING
+pdftk tmp.pdf ../../workshops/osborne/MBL_course2016_infotheory.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Vander Griend
 pdftk tmp.pdf ../../workshops/vander_griend/README.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Munro/Rust
 pdftk tmp.pdf ../../workshops/cell_cycle/CellCycleTutorial.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
+
+## Redistill to reduce size
+gs -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/printer -sOutputFile=../workbook.pdf tmp.pdf
+## remove tmp
+rm tmp.pdf
