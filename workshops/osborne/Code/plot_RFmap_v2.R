@@ -1,7 +1,7 @@
 # 1) RFmap
 
 # load the data
-load("../Data/MTneuron.RData")
+load("../Data/RFmap.RData")
 
 # see what has been loaded
 print(ls())
@@ -42,7 +42,7 @@ for (yind  in 1:dim(numspks)[1]){
     # stimulus.  The latency of this neuron is about 50ms, so spike times < 45ms are not a result of the 
     # motion. Create a temporary variable "inds" that stores the (non-zero) spike times > 45ms
     
-    inds <- sum(RFmap[yind,xind,,] > 45)
+    inds <- sum(RFmap[yind,xind,,]>45)
     
     # You will want to store the number of spikes you have counted for each grid location
     # into the array numspks that you made (full of zeros for now)
@@ -77,7 +77,7 @@ numspks <- t(numspks)
 # This fixes the problem
 numspks <- numspks[,(dim(numspks)[2]):1]
 
-# A simple plot uses the funcion image, which plots a matrix
+# A simple plot uses the function image, which plots a matrix
 # to see how to use it, type ?image
 print(
 image(x, y, numspks / nTrials, 
@@ -96,11 +96,11 @@ image(x, y, numspks / nTrials,
 # wich automatically smooths the data
 
 print(
-filled.contour(x, y, numspks/nTrials, nlevels = 25,
+filled.contour(x, y, numspks/nTrials, nlevels = 30,
                plot.title = title(main = "RF map of an MT neuron",
                                   xlab = "degrees", ylab = "degrees"),
                # choose colors
-               col = rev(rainbow(28,start=0,end=0.7)),
+               col = rev(rainbow(30,start=0,end=0.7)),
                # add a point
                plot.axes={
                  axis(1); # plot the x-axis

@@ -4,6 +4,10 @@ pdftk ../other_docs/cover.pdf ../other_docs/blank.pdf cat output tmp.pdf
 pdftk tmp.pdf ../other_docs/map.pdf cat output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Info sheet
 pdftk tmp.pdf ../other_docs/info_sheet.pdf cat output tmp2.pdf; mv tmp2.pdf tmp.pdf
+## Contact Info
+pandoc ../other_docs/contact_info.md -o ../other_docs/contact.pdf
+gs -o ../other_docs/contact2.pdf -dNoOutputFonts -sDEVICE=pdfwrite ../other_docs/contact.pdf
+pdftk tmp.pdf ../other_docs/contact2.pdf cat output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## General schedule
 pdftk tmp.pdf ../../schedule/GeneralSchedule.pdf output tmp2.pdf; mv tmp2.pdf tmp.pdf
 ## Tutorials cover
