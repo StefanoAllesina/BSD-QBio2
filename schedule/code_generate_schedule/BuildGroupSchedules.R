@@ -135,6 +135,9 @@ for (my_day in sort(unique(activities$Day))){
   daily <- activities %>% filter(Day == my_day)
   name_day <- wday(daily$StartTime[1], label = TRUE, abbr = FALSE)
   name_day <- paste0(name_day, ", September ", my_day)
+  if (name_day == "Sunday, September 11"){
+    cat(paste("\\ \n\\ \n\n"))
+  }
   cat(paste("###", name_day, "\n\n"))
   cat(paste0(
     paste0(rep("-", ll), collapse = ""),
