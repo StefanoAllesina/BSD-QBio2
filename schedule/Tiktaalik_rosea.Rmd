@@ -92,9 +92,9 @@ output:
 **2:30-2:45**         Coffee break (LB302)                                    
 **2:45-4:30**         Workshop Vander Griend (LBG70)                          
 **5:00-6:30**         Dinner (SWC)                                            
-**6:30-7:10**         Navigating first year b) (ROOM?)                        
-**7:20-8:00**         Life after PhD b) (ROOM?)                               
-**8:10-8:50**         Publishing primer b) (ROOM?)                            
+**6:30-7:10**         Navigating first year b) (Loeb 3rd floor)               
+**7:20-8:00**         Life after PhD b) (Loeb 3rd floor)                      
+**8:10-8:50**         Publishing primer b) (Loeb 3rd floor)                   
 ------------------    --------------------------------------------------------
 
 ### Monday, September 12 

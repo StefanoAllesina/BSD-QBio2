@@ -92,9 +92,9 @@ output:
 **2:30-2:45**         Coffee break (LB302)                                    
 **2:45-4:30**         Workshop Novembre (LB374)                               
 **5:00-6:30**         Dinner (SWC)                                            
-**6:30-7:10**         Publishing primer a) (ROOM?)                            
-**7:20-8:00**         Navigating first year a) (ROOM?)                        
-**8:10-8:50**         Life after PhD a) (ROOM?)                               
+**6:30-7:10**         Publishing primer a) (Loeb 3rd floor)                   
+**7:20-8:00**         Navigating first year a) (Loeb 3rd floor)               
+**8:10-8:50**         Life after PhD a) (Loeb 3rd floor)                      
 ------------------    --------------------------------------------------------
 
 ### Monday, September 12 
