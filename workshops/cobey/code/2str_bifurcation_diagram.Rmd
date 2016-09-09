@@ -1,8 +1,56 @@
-####### Bifurcation Diagram: Two Strains with Competition ####################
-## Two-strain model with optional sinusoidal forcing
-## Implemented with deSolve (lsoda) in R
-#########################################################
-## Function to output system of ODE's at each time point #########################################
+---
+title: " Bifurcation Diagram: Two Strains with Competition"
+author: Igor Vasiljevec and Sarah Cobey, with R implementation by Sylvia Ranjeva
+output: pdf_document
+params: 
+  run_num: 
+    value: 1  
+  end_time: 
+    value: !r 1000*365 
+  output_interval: 
+    value: 365.0  
+  sweep_par:
+    value: !r "beta1"  
+  par_min: 
+    value: !r 1.0/7.0
+  par_max:
+    value: !r 7.0/7.0
+  n_points: 
+    value: 40  
+  n_strobes:
+    value: 50 
+  NSS: 
+    value: 0.2
+  NIS: 
+    value: 1e-3
+  NRS:
+    value: 0.02
+  NRI: 
+    value: 0.0
+  NSI: 
+    value: 1e-3
+  NSR:
+    value: 0.02
+  NIR: 
+    value: 0.0
+  t_start: 
+    value: 0
+  t_end: 
+    value: !r (365*100)
+  delta_t: 
+    value: 1
+---
+
+```{r include = FALSE, warning = FALSE}
+# load R package to solve ODEs
+library(deSolve)
+```
+
+The code below simulates two strains with competition and optional sinusoidal forcing. 
+
+1.) Function to output the system of ODE's at each time point:
+
+```{r}
 diff_eqs <- function(t,y,p){
   beta = p[[1]]
   gamma = p[[2]]
@@ -47,28 +95,33 @@ diff_eqs <- function(t,y,p){
   })
 }
 
-###########################################################################
-# Run parameters
-run_num = 1  
-end_time = 1000*365 # run simulation for 1000 years
-output_interval = 365.0  # annual strobing
-t_start = 0
-t_end = 1000*365
-delta_t = 1
-sweep_par = "beta1"  # change this to label the varying parameter 
-par_min = 1.0/7.0
-par_max = 7.0/7.0
-n_points = 40  # number of points in parameter range
-n_strobes = 50  # number of years to sample
+```
+
+2.) Specify the parameters and initial conditions: 
+
+```{r}
+
+# run parameters
+run_num = as.numeric(params$run_num) 
+end_time = as.numeric(params$end_time) # run simulation for 1000 years
+output_interval = as.numeric(params$output_interval)  # annual strobing
+t_start = as.numeric(params$t_start)
+t_end = as.numeric(params$t_end)
+delta_t = as.numeric(params$delta_t)
+sweep_par = params$sweep_par  # change this to label the varying parameter 
+par_min = as.numeric(params$par_min)
+par_max = as.numeric(params$par_max)
+n_points = as.numeric(params$n_points)  # number of points in parameter range
+n_strobes = as.numeric(params$n_strobes)  # number of years to sample
 
 # initial conditions
-NSS = 0.2
-NIS = 1e-3
-NRS = 0.02
-NRI = 0.0
-NSI = 1e-3
-NSR = 0.02
-NIR = 0.0
+NSS = as.numeric(params$NSS)
+NIS = as.numeric(params$NIS)
+NRS = as.numeric(params$NRS)
+NSI = as.numeric(params$NSI)
+NRI = as.numeric(params$NRI)
+NSR = as.numeric(params$NSR)
+NIR = as.numeric(params$NIR)
 
 # organize and run simulations
 param_range <- seq(par_min,par_max, length.out = n_points )
@@ -79,10 +132,13 @@ t = seq(from=t_start,to=t_end,by=delta_t);
 sample_times <- seq(min(t),max(t), by = output_interval)
 #initial conditions
 N = c(NSS, NIS, NRS, NSI, NRI, NSR, NIR)
+```
 
 
+3.) Run simulations:  
+```{r}
 for( i in 1:length(param_range)){
-  cat("Running value",i, " of", length(param_range), "\n")
+  #cat("Running value",i, " of", length(param_range), "\n")
   beta1 = param_range[i] # assign param_range[i] to the varying parameter
   beta2 = 5/7
   epsilon = 0.1
@@ -96,14 +152,14 @@ for( i in 1:length(param_range)){
   beta = c(beta1,beta2)
   alpha = c(alpha1,alpha2)
   gamma = c(gamma1,gamma2)
-  params = list(beta = beta,
+  params_list = list(beta = beta,
                 gamma = gamma,
                 mu = mu,
                 alpha = alpha, 
                 epsilon = epsilon, 
                 omega = omega)  
   
-  output = ode(y=N,times=t,func=diff_eqs,parms=params) 
+  output = ode(y=N,times=t,func=diff_eqs,parms=params_list) 
   time <- output[,1]
   # full output over time sequence
   I1 <-  output[,3] + output[,8] # NIS + NIR = I1
@@ -113,13 +169,16 @@ for( i in 1:length(param_range)){
   bif_vals[i,] <- tail(I1_samples,n_strobes)
 }
 
-## plotting:
 output <- data.frame(param_range = param_range,
                      bif_vals)
-filename <- paste0("bifurcation_diagram_", sweep_par, ".png")
-png(filename)
+
+```
+
+4.) Plotting:
+
+```{r echo = FALSE, message = FALSE}
 plot(param_range,output[,2],cex=0.1,ylim=c(0,.035),xlab="beta_1",ylab="NIS + NIR")
 for(i in 3:ncol(output)){
   points(param_range,output[,i],cex=0.1)
 }
-dev.off()
+```
