@@ -1,7 +1,7 @@
 # 1) RFmap
 
 # load the data
-load("../Data/RFmap.RData")
+load("../Data/MTneuron.RData")
 
 # see what has been loaded
 print(ls())

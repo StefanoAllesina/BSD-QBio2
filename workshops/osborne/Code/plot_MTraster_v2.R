@@ -16,6 +16,7 @@ mycols <- rainbow(nDirs)
 
 # initialize an empty data-frame (table)
 toplot <- data.frame(x = numeric(0), y = numeric(0), color = character(0))
+speed<-4
 
 for (dind in 1:nDirs){
   # for each direction
