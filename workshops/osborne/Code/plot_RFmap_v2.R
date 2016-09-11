@@ -35,8 +35,8 @@ for (yind  in 1:dim(numspks)[1]){
     # Note that RFmap[yind, xind, , ] is a matrix. We just count how
     # many values in the matrix are not zero, and store the value in numspks[yind,xind]
     
-   #  inds <- sum(RFmap[yind,xind,,] != 0)    # != means not equal.  You could also use >0 because there
-                                              # are no negative spike times in the array RFmap
+    #  inds <- sum(RFmap[yind,xind,,] != 0)    # != means not equal.  You could also use >0 because there
+    # are no negative spike times in the array RFmap
     
     # We can be more accurate with the map we build if we only count spikes that are driven by the 
     # stimulus.  The latency of this neuron is about 50ms, so spike times < 45ms are not a result of the 
@@ -80,12 +80,12 @@ numspks <- numspks[,(dim(numspks)[2]):1]
 # A simple plot uses the function image, which plots a matrix
 # to see how to use it, type ?image
 print(
-image(x, y, numspks / nTrials, 
-            main = "RF map of an MT neuron", 
-            xlab = "degrees", 
-            ylab = "degrees",
-            col = rev(rainbow(27,start=0,end=0.7))
-)
+  image(x, y, numspks / nTrials, 
+        main = "RF map of an MT neuron", 
+        xlab = "degrees", 
+        ylab = "degrees",
+        col = rev(rainbow(27,start=0,end=0.7))
+  )
 )
 # notice that we have divided by the number of times in which the stimulus was repeated 
 # at each grid location.  That yields the average spike count.  The total number of spikes across
@@ -96,18 +96,18 @@ image(x, y, numspks / nTrials,
 # wich automatically smooths the data
 
 print(
-filled.contour(x, y, numspks/nTrials, nlevels = 30,
-               plot.title = title(main = "RF map of an MT neuron",
-                                  xlab = "degrees", ylab = "degrees"),
-               # choose colors
-               col = rev(rainbow(30,start=0,end=0.7)),
-               # add a point
-               plot.axes={
-                 axis(1); # plot the x-axis
-                 axis(2); # plot the y axis
-                 # The center of the visual field of the monkey was at (7.5, -7.5)
-                 # Let's put a + sign to mark the spot
-                 points(0, 0, pch = "+", cex = 2, col = "white", font = 2)}
-               )
-
+  filled.contour(x, y, numspks/nTrials, nlevels = 30,
+                 plot.title = title(main = "RF map of an MT neuron",
+                                    xlab = "degrees", ylab = "degrees"),
+                 # choose colors
+                 col = rev(rainbow(30,start=0,end=0.7)),
+                 # add a point
+                 plot.axes={
+                   axis(1); # plot the x-axis
+                   axis(2); # plot the y axis
+                   # The center of the visual field of the monkey was at (7.5, -7.5)
+                   # Let's put a + sign to mark the spot
+                   points(0, 0, pch = "+", cex = 2, col = "white", font = 2)}
+  )
+  
 )
