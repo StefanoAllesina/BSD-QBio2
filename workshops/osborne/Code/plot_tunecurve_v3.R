@@ -2,7 +2,7 @@
 
 # A tuning curve is the average firing rate of the neuron as a function of the 
 # stimulus direction
-
+rm(list=ls())
 # load the data
 load("../Data/MTneurons8.RData")
 
@@ -59,6 +59,32 @@ segwidth = 2
 segments(directions-segwidth,mean_rates_dir-sddir,directions+segwidth,mean_rates_dir-sddir)
 segments(directions-segwidth,mean_rates_dir+sddir,directions+segwidth,mean_rates_dir+sddir)
 
+#plot vertical segments of errorbars
+segments(directions, mean_rates_dir-sddir,directions, mean_rates_dir+sddir)
+#width of top/bottom of errorbars
+segwidth = 2
+segments(directions-segwidth,mean_rates_dir-sddir,directions+segwidth,mean_rates_dir-sddir)
+segments(directions-segwidth,mean_rates_dir+sddir,directions+segwidth,mean_rates_dir+sddir)
+
+
+#What is the preferred motion direction for this cell?
+#It is the direction with the highest spike count on average (across repeats of the stimulus)
+
+maxdir_index <-which(mean_rates_dir==max(mean_rates_dir))
+directions[maxdir_index]
+
+#the preferred direction is +15degrees (0 degrees is rightward)
+# the 24 directions were in 15 deg incrememnts
+#the opposite direction is 180 deg from the preferred, ie 15-180=165 deg
+# So we want index = 1 for the ooposite direction
+
+
+opp_dir <- 1
+background_rate <- mean_rates_dir[opp_dir]
+
+#difference in firing rate between preferred and background (opposite direction)?
+
+max_minus_min <- max(mean_rates_dir)-background_rate
 #same for speed
 mean_rates_spd<-colMeans(spikecount_mean)*(1000/200)
 

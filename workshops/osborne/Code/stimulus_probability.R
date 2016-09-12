@@ -118,9 +118,3 @@ for (dirindex in 1:length(directions)){
 }
 
 #how do these estimates change depending on how much of the response you use?
-
-#we can go one step further by using the Poisson distribution
-#to more completely estimate the spike count distribution if we had infinite trials
-#Poisson distribution: mean equal to variance, so only parameter is mean spike count
-spikecount_mean<-rowMeans(spikecount_sum,dims=2)
-
